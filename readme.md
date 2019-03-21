@@ -1,4 +1,4 @@
-# Bastion Siege Logic [![Build Status](https://travis-ci.org/EdJoPaTo/bastion-siege-logic.svg?branch=master)](https://travis-ci.org/EdJoPaTo/bastion-siege-logic)
+# Bastion Siege Logic [![Build Status](https://travis-ci.com/EdJoPaTo/bastion-siege-logic.svg?branch=master)](https://travis-ci.com/EdJoPaTo/bastion-siege-logic)
 
 This project contains what I reverse engineered about the logic of [BastionSiege](https://telegram.me/BastionSiegeBot?start=ab4b7ba6256a86b6), a Telegram Game made by [@DorianPeregrim](https://t.me/DorianPeregrim).
 
