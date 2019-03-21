@@ -56,7 +56,7 @@ export function calcBuildingCostPerWinchance(battleType: BattleType, building: B
 }
 
 export function nextBattleTimestamp(battleSoloTimestamp = 0, battleAllianceTimestamp = 0, karma = 0): {alliance: number; alliancePure: number; solo: number} {
-	const lastAttackTimestamp = Math.max(battleSoloTimestamp || 0, battleAllianceTimestamp || 0)
+	const lastAttackTimestamp = Math.max(battleSoloTimestamp, battleAllianceTimestamp)
 	const minutesTillNextSoloAttack = karma < 0 ? 5 : 10
 
 	const nextAttack = lastAttackTimestamp + (60 * minutesTillNextSoloAttack)
