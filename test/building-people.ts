@@ -3,11 +3,25 @@ import test, {ExecutionContext} from 'ava'
 import {
 	calcBarracksCapacity,
 	calcBarracksNeeded,
+	calcHousesCapacity,
+	calcHousesPeopleIncome,
 	calcRecoveryMissingPeople,
 	calcWallArcherCapacity
 } from '../source/building-people'
 
 import {buildingsOne} from './helpers/buildings'
+
+test('houses capacity', t => {
+	t.is(calcHousesCapacity(1), 20, 'level 1')
+	t.is(calcHousesCapacity(10), 200, 'level 10')
+	t.is(calcHousesCapacity(500), 10000, 'level 500')
+})
+
+test('houses people income', t => {
+	t.is(calcHousesPeopleIncome(1), 1, 'level 1')
+	t.is(calcHousesPeopleIncome(10), 10, 'level 10')
+	t.is(calcHousesPeopleIncome(500), 500, 'level 500')
+})
 
 test('barracks capacity', t => {
 	t.is(calcBarracksCapacity(1), 40, 'level 1')

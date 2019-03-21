@@ -2,6 +2,18 @@ import {
 	Buildings
 } from './buildings'
 
+import {
+	calcGoldIncomePerPerson
+} from './resources'
+
+export function calcHousesCapacity(housesLevel: number): number {
+	return housesLevel * 20
+}
+
+export function calcHousesPeopleIncome(housesLevel: number): number {
+	return housesLevel
+}
+
 export function calcBarracksCapacity(barracksLevel: number): number {
 	return barracksLevel * 40
 }
@@ -15,11 +27,10 @@ export function calcWallArcherCapacity(wallLevel: number): number {
 }
 
 export function calcRecoveryMissingPeople(buildings: Buildings, missingPeople: number): {gold: number; minutesNeeded: number} {
-	// TODO: split into multiple functions
-	const peoplePerMinute = buildings.houses
+	const peoplePerMinute = calcHousesPeopleIncome(buildings.houses)
+	const maxPeople = calcHousesCapacity(buildings.houses)
+	const incomePerPerson = calcGoldIncomePerPerson(buildings.townhall)
 	const minutesNeeded = Math.ceil(missingPeople / peoplePerMinute)
-	const maxPeople = buildings.houses * 20
-	const incomePerPerson = 0.5 + (0.1 * buildings.townhall)
 
 	let goldLost = 0
 	let missingPeopleRest = missingPeople

@@ -3,6 +3,7 @@ import test from 'ava'
 import {
 	calcGoldCapacity,
 	calcGoldIncome,
+	calcGoldIncomePerPerson,
 	calcMinutesNeededToFillStorage,
 	calcProduction,
 	calcProductionFood,
@@ -23,6 +24,12 @@ test('gold income', t => {
 	t.is(calcGoldIncome(1, 1), 12, 'level 1 1')
 	t.is(calcGoldIncome(35, 50), 4000, 'level 35 50')
 	t.is(calcGoldIncome(282, 400), 229600, 'level 282 400')
+})
+
+test('gold income per Person', t => {
+	t.is(calcGoldIncomePerPerson(1), 0.6, 'level 1')
+	t.is(calcGoldIncomePerPerson(35), 4, 'level 35')
+	t.is(calcGoldIncomePerPerson(195), 20, 'level 195')
 })
 
 test('production', t => {

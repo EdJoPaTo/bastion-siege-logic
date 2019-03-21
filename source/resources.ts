@@ -23,9 +23,14 @@ export function calcStorageCapacity(storageLevel: number): number {
 	return 50 * storageLevel * (storageLevel + 20)
 }
 
+export function calcGoldIncomePerPerson(townhallLevel: number): number {
+	return 0.5 + (0.1 * townhallLevel)
+}
+
 export function calcGoldIncome(townhallLevel: number, housesLevel: number): number {
 	// 0.1 * 20 = 1 * 2
 	// return (0.5 + 0.1 * townhallLevel) * housesLevel * 20
+	// return calcGoldIncomePerPerson(townhallLevel) * calcHousesCapacity(housesLevel)
 	return (5 + townhallLevel) * housesLevel * 2
 }
 
