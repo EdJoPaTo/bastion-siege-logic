@@ -82,6 +82,13 @@ test('minutes needed to fill with only ressource income', t => {
 	t.is(calcMinutesNeededToFillStorage(buildings, currentResources), 5)
 })
 
+test('minutes needed to fill only food', t => {
+	const currentResources = {gold: 0, wood: 1050, stone: 1050, food: 1000}
+	const buildings = {...buildingsOne, townhall: 0, storage: 1, houses: 0, farm: 1, sawmill: 0, mine: 0}
+	// 50 food needed, 10 food per minute -> 5 minutes needed
+	t.is(calcMinutesNeededToFillStorage(buildings, currentResources), 5)
+})
+
 test('minutes needed to fill when something is full before on its own', t => {
 	const currentResources = {gold: 0, wood: 550, stone: 50, food: 1050}
 	// Times per Resource
