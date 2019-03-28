@@ -58,3 +58,10 @@ function calcMaxBuildingLevelWithFactorAndCapacity(factor: number, capacity: num
 	const result = Math.floor(tmp)
 	return result
 }
+
+export function calcTownhallLevelNeededForGold(gold: number): {level: number; exact: boolean} {
+	const level = Math.ceil(gold / 500000)
+	const exact = gold % 500000 === 0
+
+	return {level, exact}
+}

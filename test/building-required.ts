@@ -5,7 +5,8 @@ import {
 	calcMaxBuildingLevelWithStorage,
 	calcMaxBuildingLevelWithTownhall,
 	calcStorageLevelNeededForUpgrade,
-	calcTownhallLevelNeededForUpgrade
+	calcTownhallLevelNeededForUpgrade,
+	calcTownhallLevelNeededForGold
 } from '../source/building-required'
 
 import {buildingsOne} from './helpers/buildings'
@@ -48,4 +49,23 @@ test('trebuchet possible with townhall level', t => {
 	t.is(calcMaxBuildingLevelWithTownhall('trebuchet', 81), 100)
 	t.is(calcMaxBuildingLevelWithTownhall('trebuchet', 502), 250)
 	t.is(calcMaxBuildingLevelWithTownhall('trebuchet', 983), 350)
+})
+
+test('townhall level from max gold', t => {
+	t.deepEqual(calcTownhallLevelNeededForGold(500000), {
+		exact: true,
+		level: 1
+	})
+	t.deepEqual(calcTownhallLevelNeededForGold(5000000), {
+		exact: true,
+		level: 10
+	})
+	t.deepEqual(calcTownhallLevelNeededForGold(50000000), {
+		exact: true,
+		level: 100
+	})
+	t.deepEqual(calcTownhallLevelNeededForGold(50030000), {
+		exact: false,
+		level: 101
+	})
 })
