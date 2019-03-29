@@ -15,6 +15,12 @@ export interface Resources {
 	food: number;
 }
 
+export type ConstructionResourceName = keyof ConstructionResources
+export type ResourceName = keyof Resources
+
+export const CONSTRUCTION_RESOURCES: ConstructionResourceName[] = ['gold', 'wood', 'stone']
+export const RESOURCES: ResourceName[] = ['gold', 'wood', 'stone', 'food']
+
 export function calcGoldCapacity(townhallLevel: number): number {
 	return 500000 * townhallLevel
 }

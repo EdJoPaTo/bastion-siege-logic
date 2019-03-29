@@ -16,7 +16,13 @@ export interface Workshop {
 
 export interface Constructions extends Buildings, Workshop {}
 
+export type BuildingName = keyof Buildings
+export type WorkshopName = keyof Workshop
 export type ConstructionName = keyof Constructions
+
+export const BUILDINGS: BuildingName[] = ['townhall', 'storage', 'houses', 'farm', 'sawmill', 'mine', 'barracks', 'wall']
+export const WORKSHOP: WorkshopName[] = ['trebuchet', 'ballista']
+export const CONSTRUCTIONS: ConstructionName[] = [...BUILDINGS, ...WORKSHOP]
 
 // Array Content: gold, wood, stone
 export const BUILDING_COST_FACTORS: {[key: string]: [number, number, number] } = {
