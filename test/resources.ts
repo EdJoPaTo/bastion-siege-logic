@@ -7,6 +7,7 @@ import {
 	calcMinutesNeededToFillStorage,
 	calcProduction,
 	calcProductionFood,
+	calcResourcesAfterConstruction,
 	calcSemitotalGoldIncome,
 	calcStorageCapacity,
 	estimateResourcesAfter
@@ -154,4 +155,36 @@ test('estimate loosing food', t => {
 	const buildings = {...buildingsOne, storage: 491, houses: 500, farm: 100}
 
 	t.is(estimateResourcesAfter(currentResources, buildings, 1).food, 6000)
+})
+
+test('resources after construction only gold', t => {
+	const current = {gold: 2000, wood: 0, stone: 0, food: 0}
+	const required = {gold: 1000, wood: 0, stone: 0}
+	t.deepEqual(calcResourcesAfterConstruction(current, required), {
+		gold: 1000, wood: 0, stone: 0, food: 0
+	})
+})
+
+test('resources after construction exact', t => {
+	const current = {gold: 1000, wood: 500, stone: 1000, food: 0}
+	const required = {gold: 1000, wood: 500, stone: 1000}
+	t.deepEqual(calcResourcesAfterConstruction(current, required), {
+		gold: 0, wood: 0, stone: 0, food: 0
+	})
+})
+
+test('resources after construction buy missing', t => {
+	const current = {gold: 3000, wood: 500, stone: 500, food: 0}
+	const required = {gold: 1000, wood: 500, stone: 1000}
+	t.deepEqual(calcResourcesAfterConstruction(current, required), {
+		gold: 1000, wood: 0, stone: 0, food: 0
+	})
+})
+
+test('resources after construction food unharmed', t => {
+	const current = {gold: 1000, wood: 0, stone: 0, food: 10000}
+	const required = {gold: 1000, wood: 0, stone: 0}
+	t.deepEqual(calcResourcesAfterConstruction(current, required), {
+		gold: 0, wood: 0, stone: 0, food: 10000
+	})
 })

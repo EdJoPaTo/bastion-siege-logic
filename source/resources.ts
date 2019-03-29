@@ -152,3 +152,19 @@ export function estimateResourcesAfter(currentResources: Resources, buildings: B
 
 	return estimatedWithLimits
 }
+
+// Gold can be negative afterwards!
+export function calcResourcesAfterConstruction(before: Resources, cost: ConstructionResources): Resources {
+	const result: Resources = {gold: 0, wood: 0, stone: 0, food: before.food}
+	for (const r of CONSTRUCTION_RESOURCES) {
+		result[r] = before[r] - cost[r]
+
+		if (result[r] < 0 && r !== 'gold') {
+			// Add negative -> reduce gold
+			result.gold += result[r] * 2
+			result[r] = 0
+		}
+	}
+
+	return result
+}
