@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import {NOT_ALLOWED_CHARS} from '../../source/gamescreen/helpers/text-cleanup'
+import {NOT_ALLOWED_CHARS} from '../../source/gamescreen/text-cleanup'
 
 import {EMOJI} from '../../source/gamescreen/emoji'
 
