@@ -1,3 +1,5 @@
+import {Mystic} from './gamescreen/mystics'
+
 export type BattlereportResource = 'gold' | 'gems' | 'karma' | 'terra'
 
 export interface Battlereport {
@@ -5,8 +7,9 @@ export interface Battlereport {
 	attack: boolean;
 	won: boolean;
 	friends: string[];
-	enemyAlliance?: string;
 	enemies: string[];
+	enemyAlliance?: string;
+	enemyMystic?: Mystic;
 
 	soldiersAlive: number;
 	soldiersTotal: number;
