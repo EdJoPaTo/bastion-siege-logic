@@ -2,8 +2,11 @@ import {Mystic} from './gamescreen/mystics'
 
 export type BattlereportResource = 'gold' | 'gems' | 'karma' | 'terra'
 
-export interface Battlereport {
+export interface Battlereport extends BattlereportRaw {
 	time: number;
+}
+
+export interface BattlereportRaw {
 	attack: boolean;
 	won: boolean;
 	friends: string[];
