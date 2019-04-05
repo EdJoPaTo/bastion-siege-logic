@@ -16,6 +16,7 @@ export function main(content: string): GamescreenContent {
 	const firstLine = content.split('\n')[0].trim()
 
 	return {
+		type: 'main',
 		player: parsePlayer(firstLine),
 		resources: parseResources(content)
 	}
@@ -72,12 +73,18 @@ export function storage(content: string): GamescreenContent {
 		food: regexHelper.getNumberStrict(content, `(\\d+)/\\d+${EMOJI.food}`)
 	}
 
-	return {resources}
+	return {
+		type: 'storage',
+		resources
+	}
 }
 
 export function resources(content: string): GamescreenContent {
 	if (contentFilter.startsAny(content, 'Ресурсы', 'Resources')) {
-		return {resources: parseResources(content)}
+		return {
+			type: 'resources',
+			resources: parseResources(content)
+		}
 	}
 
 	return {}

@@ -73,6 +73,7 @@ export function war(content: string): GamescreenContent {
 	}
 
 	const result: GamescreenContent = {
+		type: 'war',
 		domainStats: getWarMenuDomainStats(content)
 	}
 

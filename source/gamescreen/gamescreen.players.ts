@@ -53,7 +53,9 @@ export function allianceBattleSupport(content: string): GamescreenContent {
 
 		if (contentFilter.ends(trimmedText, 'Твоя армия присоединилась к атаке.')) {
 			// Your army joined the attack
-			return {}
+			return {
+				type: 'allianceBattleYourArmyJoined'
+			}
 		}
 
 		const playerPartRegex = contentFilter.includes(trimmedText, '\'s army joined the ') ?

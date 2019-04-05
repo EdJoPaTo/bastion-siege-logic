@@ -4,7 +4,6 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'attackscout',
 		information: {attackscout: {
 			player: {
 				achievements: undefined,
@@ -17,7 +16,6 @@ const examples: Testexample[] = [
 		}},
 		text: 'Our scouts found [🎴]Slave in his domain Pledge with 5446🗺 territory. If you win, you\'ll get 5☯ karma points.'
 	}, {
-		type: 'attackscout',
 		information: {attackscout: {
 			player: {
 				achievements: '⛏💎🎖',
@@ -31,7 +29,6 @@ const examples: Testexample[] = [
 		text: `Our scouts found {⛏💎🎖}Homer
 Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll get 3☯ karma points.`
 	}, {
-		type: 'allianceBattleStart',
 		information: {allianceBattleStart: {
 			attack: false,
 			ally: {
@@ -49,7 +46,6 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: 'Your ally [🌶]Valravn was attacked by [🛰]Eln from [🛰​]Имперская гвардия! You can send your army to help defend.'
 	}, {
-		type: 'allianceBattleStart',
 		information: {allianceBattleStart: {
 			attack: true,
 			ally: {
@@ -67,7 +63,6 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: 'Your ally [🌶]Jan Breydel attacked {⛏}[🐮]Myadib from the alliance [🐮​]Young Dead Cow! You can join the battle and help him in the attack.'
 	}, {
-		type: 'allianceBattleSupport',
 		information: {allianceBattleSupport: {
 			achievements: '⛏💎🎖',
 			alliance: '⚡',
@@ -76,7 +71,6 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: '🕊⚔{⛏💎🎖}[⚡]Dave Mathers\'s army joined the attack!'
 	}, {
-		type: 'allianceBattleSupport',
 		information: {allianceBattleSupport: {
 			achievements: undefined,
 			alliance: '🌶',
@@ -85,7 +79,6 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: '🕊🛡[🌶]Valravn\'s army joined the defense!'
 	}, {
-		type: 'attackincoming',
 		information: {attackIncoming: {
 			achievements: undefined,
 			alliance: '🐮',
@@ -94,7 +87,6 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: '‼️Your domain attacked! [🐮]Son of Gods approaches the border! Your whole ⚔Army will be sent to the defense!'
 	}, {
-		type: 'alliancejoinrequest',
 		information: {allianceJoinRequest: {
 			achievements: undefined,
 			alliance: undefined,

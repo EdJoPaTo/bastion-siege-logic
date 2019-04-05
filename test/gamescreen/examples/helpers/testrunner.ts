@@ -5,8 +5,8 @@ import {parseGamescreenContent} from '../../../../source/gamescreen/gamescreen'
 import {Testexample} from './types'
 
 export function testrunner(t: ExecutionContext, example: Testexample): void {
-	t.log('type', example.type)
 	t.log('language', example.language)
+	t.log('comment', example.comment)
 	t.log(example.information)
 	t.log(example.text)
 

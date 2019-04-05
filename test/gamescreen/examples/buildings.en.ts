@@ -4,8 +4,8 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'main',
 		information: {
+			type: 'main',
 			player: {
 				bonus: undefined,
 				achievements: undefined,
@@ -36,7 +36,6 @@ Wood         8065450🌲
 Stone       11765450⛏
 Food        11434985🍖`
 	}, {
-		type: 'buildings',
 		information: {buildings: {
 			townhall: 342,
 			storage: 476,
@@ -60,7 +59,6 @@ Food        11434985🍖`
 
 What will we build?`
 	}, {
-		type: 'buildings',
 		information: {buildings: {
 			townhall: 1,
 			storage: 0,
@@ -78,13 +76,15 @@ What will we build?`
 
 First build the 🏚Storage to add resources. In 🏚Storage can be stored 🌲Wood, ⛏Stone и 🍖Food. Every worker in one game day brings 1 resource from each production buildind.`
 	}, {
-		type: 'storage',
-		information: {resources: {
-			gold: 3439446,
-			wood: 11578680,
-			stone: 11778680,
-			food: 11349345
-		}},
+		information: {
+			type: 'storage',
+			resources: {
+				gold: 3439446,
+				wood: 11578680,
+				stone: 11778680,
+				food: 11349345
+			}
+		},
 		text: `🏚Storage
 
 Level            476
@@ -107,14 +107,12 @@ Upgrade
          11400300🌲​✅
          11400300⛏​✅`
 	}, {
-		type: 'workshop',
 		information: {workshop: {
 			trebuchet: 0,
 			ballista: 0
 		}},
 		text: 'Workshop'
 	}, {
-		type: 'workshop',
 		information: {workshop: {
 			trebuchet: 21,
 			ballista: 0
@@ -123,7 +121,6 @@ Upgrade
 
 ⚔Trebuchet 21⛔️   5/5👥`
 	}, {
-		type: 'workshop',
 		information: {workshop: {
 			trebuchet: 21,
 			ballista: 1
@@ -133,21 +130,9 @@ Upgrade
 ⚔Trebuchet 21​✅   5/5👥
 ⚔Ballista   1​✅   1/1👥`
 	}, {
-		type: 'resources',
-		information: {resources: {
-			gold: 2768991,
-			wood: 8065450,
-			stone: 11765450,
-			food: 11434985
-		}},
-		text: `Resources
-Gold         2768991💰
-Wood         8065450🌲
-Stone       11765450⛏
-Food        11434985🍖`
-	}, {
-		type: 'trebuchet',
-		information: {},
+		information: {
+			type: 'trebuchet'
+		},
 		text: `⚔️Trebuchet
 
 Level             21
@@ -166,13 +151,30 @@ Upgrade
            253000🌲​✅
             75900⛏​✅`
 	}, {
-		type: 'resources',
-		information: {resources: {
-			gold: 135551,
-			wood: 11900,
-			stone: 6711900,
-			food: 11761385
-		}},
+		information: {
+			type: 'resources',
+			resources: {
+				gold: 2768991,
+				wood: 8065450,
+				stone: 11765450,
+				food: 11434985
+			}
+		},
+		text: `Resources
+Gold         2768991💰
+Wood         8065450🌲
+Stone       11765450⛏
+Food        11434985🍖`
+	}, {
+		information: {
+			type: 'resources',
+			resources: {
+				gold: 135551,
+				wood: 11900,
+				stone: 6711900,
+				food: 11761385
+			}
+		},
 		text: `Resources
 Gold          135551💰
 Wood           11900🌲

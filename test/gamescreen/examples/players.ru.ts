@@ -4,7 +4,6 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'attackscout',
 		information: {attackscout: {
 			player: {
 				achievements: undefined,
@@ -17,7 +16,6 @@ const examples: Testexample[] = [
 		}},
 		text: 'Разведчики докладывают, что неподалеку расположился Terrorchik в своих владениях Sklep размером 10815🗺. За победу ты получишь 3☯.'
 	}, {
-		type: 'attackIncoming',
 		information: {attackIncoming: {
 			achievements: undefined,
 			alliance: '🚀',
@@ -26,7 +24,6 @@ const examples: Testexample[] = [
 		}},
 		text: '‼️Твои владения атакованы! [🚀]Союз-IlIIlIlIlI подступает к границе! Вся твоя ⚔Армия будет отправлена на защиту!'
 	}, {
-		type: 'allianceBattleStart',
 		information: {allianceBattleStart: {
 			attack: false,
 			ally: {
@@ -44,7 +41,6 @@ const examples: Testexample[] = [
 		}},
 		text: 'Твоего союзника [🌶]ia_yurievna атаковал [🦋]Витюша из [🦋​]Хусь! Ты можешь отправить свою армию помогать защищаться.'
 	}, {
-		type: 'allianceBattleStart',
 		information: {allianceBattleStart: {
 			attack: true,
 			ally: {
@@ -62,7 +58,6 @@ const examples: Testexample[] = [
 		}},
 		text: 'Твой союзник {🎖}[🌶]LOOOL атаковал {⛏}[💋]Ganda из альянса [💋​]Ca! Ты можешь вступить в бой и помочь ему в атаке.'
 	}, {
-		type: 'allianceBattleSupport',
 		information: {allianceBattleSupport: {
 			achievements: undefined,
 			alliance: '🌶',
@@ -71,7 +66,6 @@ const examples: Testexample[] = [
 		}},
 		text: '🕊⚔Армия [🌶]Vanderlog присоединилась к атаке!'
 	}, {
-		type: 'allianceBattleSupport',
 		information: {allianceBattleSupport: {
 			achievements: '💎⛏🎖',
 			alliance: '⚡',
@@ -80,10 +74,11 @@ const examples: Testexample[] = [
 		}},
 		text: '🕊🛡Армия {💎⛏🎖}[⚡]DartDelunore присоединилась к защите!'
 	}, {
-		information: {},
+		information: {
+			type: 'allianceBattleYourArmyJoined'
+		},
 		text: '🕊⚔Твоя армия присоединилась к атаке.'
 	}, {
-		type: 'alliancejoinrequest',
 		information: {allianceJoinRequest: {
 			achievements: undefined,
 			alliance: undefined,

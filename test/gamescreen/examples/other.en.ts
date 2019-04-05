@@ -4,20 +4,22 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'patrolreport',
-		information: {},
+		information: {
+			type: 'patrolreport'
+		},
 		text: `⚔ The battle was all night. But your warriors lost. The survivors decided to retreat. 317⚔ returned home, but they haven't brought gold.
 For 317⚔ of 317⚔ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.
 317⚔ of the 317⚔ dismissed soldiers did not find myself dwelling places in your domain.`
 	}, {
-		type: 'patrolreport',
-		information: {},
+		information: {
+			type: 'patrolreport'
+		},
 		text: `⚔ The battle was all night and your warriors won the battle. But your soldiers suffered heavy losses. 7050⚔ returned home. Your treasury is replenished 18593698💰.
 For 7050⚔ of 7050⚔ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.
 7050⚔ of the 7050⚔ dismissed soldiers did not find myself dwelling places in your domain.`
 	}, {
-		type: 'war',
 		information: {
+			type: 'war',
 			domainStats: {
 				wins: 4817,
 				karma: 5059,
@@ -39,8 +41,8 @@ Weather   Snowstorm🌪
       15000/15000⚔​✅
          21607780🍖​✅`
 	}, {
-		type: 'war',
 		information: {
+			type: 'war',
 			domainStats: {
 				wins: 4487,
 				karma: 4387,
@@ -70,8 +72,8 @@ Continues the battle with alliance [🗽​]Revolution
 Attack: Bob, not used name
 Defence: Peter-s`
 	}, {
-		type: 'war',
 		information: {
+			type: 'war',
 			domainStats: {
 				wins: 2570,
 				karma: -6,
@@ -104,7 +106,6 @@ Weather      Sunny☀️
 No attacks - 21 min.
 Continues the battle with ❄️Барc`
 	}, {
-		type: 'effects',
 		information: {effects: [
 			{
 				emoji: '🛡',
@@ -134,7 +135,6 @@ Continues the battle with ❄️Барc`
 🔥️ - 🔥️Inquisition fires. Reduces the duration of the 💀Plague effect by half and prevents the appearance of the latter. You can buy several times. Will last until: 2018-12-19 08:43:16 +0000 UTC
 🎯 - 🎯Accurate calculation. Adds +100 to accuracy in the battle with the 🐲Dragon. Will last until: 2018-12-21 04:30:39 +0000 UTC`
 	}, {
-		type: 'effects',
 		information: {effects: [
 			{
 				emoji: '🏰',

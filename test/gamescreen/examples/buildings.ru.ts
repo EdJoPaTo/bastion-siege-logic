@@ -4,13 +4,15 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'storage',
-		information: {resources: {
-			wood: 833060,
-			stone: 47835650,
-			food: 48483094,
-			gold: 17610076
-		}},
+		information: {
+			type: 'storage',
+			resources: {
+				wood: 833060,
+				stone: 47835650,
+				food: 48483094,
+				gold: 17610076
+			}
+		},
 		text: `🏚Склад
 
 Уровень          976
@@ -33,7 +35,6 @@ const examples: Testexample[] = [
          47775300🌲⛔️
          47775300⛏​✅`
 	}, {
-		type: 'buildings',
 		information: {buildings: {
 			townhall: 695,
 			storage: 976,
@@ -57,7 +58,6 @@ const examples: Testexample[] = [
 
 Что будем строить?`
 	}, {
-		type: 'workshop',
 		information: {workshop: {
 			trebuchet: 21,
 			ballista: 30
@@ -67,15 +67,15 @@ const examples: Testexample[] = [
 ⚔Требушет 21​✅   3/5👥
 ⚔Баллиста 30​✅   7/7👥`
 	}, {
-		type: 'workshop',
 		information: {workshop: {
 			trebuchet: 0,
 			ballista: 0
 		}},
 		text: 'Мастерская'
 	}, {
-		type: 'trebuchet',
-		information: {},
+		information: {
+			type: 'trebuchet'
+		},
 		text: `⚔Требушет
 
 Уровень           21
@@ -94,8 +94,8 @@ const examples: Testexample[] = [
            253000🌲​✅
             75900⛏​✅`
 	}, {
-		type: 'main',
 		information: {
+			type: 'main',
 			player: {
 				bonus: '🛡',
 				achievements: undefined,
@@ -127,13 +127,15 @@ Stalker
 Камень      47843650⛏
 Еда         48427110🍖`
 	}, {
-		type: 'resources',
-		information: {resources: {
-			gold: 107739860,
-			wood: 828650,
-			stone: 828650,
-			food: 48506250
-		}},
+		information: {
+			type: 'resources',
+			resources: {
+				gold: 107739860,
+				wood: 828650,
+				stone: 828650,
+				food: 48506250
+			}
+		},
 		text: `Ресурсы
 Кристаллы         11💎
 Золото     107739860💰

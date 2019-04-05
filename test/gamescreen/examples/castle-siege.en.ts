@@ -4,7 +4,6 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
-		type: 'castleSiegeJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
 			alliance: '🌶',
@@ -13,7 +12,6 @@ const examples: Testexample[] = [
 		}},
 		text: '⚔️🏰 [🌶]Bob joined the siege on Sapphire castle.'
 	}, {
-		type: 'castleSiegeJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: '🏰⛏🎖',
 			alliance: '🏅',
@@ -22,7 +20,7 @@ const examples: Testexample[] = [
 		}},
 		text: '⚔️🏰 😈{🏰⛏🎖}[🏅]The Flying Dutchman joined the siege on Diamond castle.'
 	}, {
-		type: 'castleSiegeJoined',
+		comment: 'castleSiegeLeaderJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
 			alliance: '🌶',
@@ -31,25 +29,21 @@ const examples: Testexample[] = [
 		}},
 		text: '⚔️🏰 The leader of your alliance [🌶]Vanderlog joined the siege at the Diamond castle. Go to him for help?'
 	}, {
-		type: 'castleSiegeJoined',
 		information: {
 			type: 'castleSiegeYouJoined'
 		},
 		text: '⚔️🏰 Your army joined the siege on Sapphire castle.'
 	}, {
-		type: 'castleSiegeJoined',
 		information: {
 			type: 'castleSiegeYouJoined'
 		},
 		text: '⚔️🏰 Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.'
 	}, {
-		type: 'castleSiegeJoined',
 		information: {castleSiegeAllianceJoined: {
 			alliance: '🌙'
 		}},
 		text: 'The alliance [🌙​]Silver Millennium joined the siege on Ruby castle.'
 	}, {
-		type: 'castleSiegeParticipants',
 		information: {castleSiegeParticipants: [
 			{
 				alliance: '⛱',

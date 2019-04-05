@@ -30,7 +30,7 @@ const examples: Testexample[] = [
 		}},
 		text: '⚔️🏰 {💎🎖🏰⛏}[🌶]YahWeh выступил против осады на Сапфировый замок.'
 	}, {
-		type: 'castleSiegeLeaderJoined',
+		comment: 'castleSiegeLeaderJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
 			alliance: '🌶',
@@ -44,13 +44,11 @@ const examples: Testexample[] = [
 		},
 		text: '⚔️🏰 Твоя армия присоединилась к осаде на Сапфировый замок.'
 	}, {
-		type: 'castleSiegeAllianceJoined',
 		information: {castleSiegeAllianceJoined: {
 			alliance: '🌙'
 		}},
 		text: 'Альянс [🌙​]Silver Millennium присоединился к осаде на Рубиновый замок.'
 	}, {
-		type: 'castleSiegeParticipants',
 		information: {castleSiegeParticipants: [
 			{
 				alliance: '⛱',
