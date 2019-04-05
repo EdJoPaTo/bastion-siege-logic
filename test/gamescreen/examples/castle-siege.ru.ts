@@ -22,6 +22,14 @@ const examples: Testexample[] = [
 		}},
 		text: '⚔️🏰 {🎖⛏🏰}[🌶]Bob присоединился к осаде на Сапфировый замок.'
 	}, {
+		information: {castleSiegePlayerJoined: {
+			achievements: '💎🎖🏰⛏',
+			alliance: '🌶',
+			bonus: undefined,
+			name: 'YahWeh'
+		}},
+		text: '⚔️🏰 {💎🎖🏰⛏}[🌶]YahWeh выступил против осады на Сапфировый замок.'
+	}, {
 		type: 'castleSiegeLeaderJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
