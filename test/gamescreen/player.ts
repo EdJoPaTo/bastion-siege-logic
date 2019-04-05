@@ -36,6 +36,13 @@ test('bonus', exampleMacro, '🎃paul', {
 	name: 'paul'
 })
 
+test('bonus zombie', exampleMacro, '🧟‍Nope', {
+	achievements: undefined,
+	alliance: undefined,
+	bonus: '🧟',
+	name: 'Nope'
+})
+
 test('achievements', exampleMacro, '{⛏🎖🏰}paul', {
 	achievements: '⛏🎖🏰',
 	alliance: undefined,
@@ -62,6 +69,13 @@ test('bonus & achievements & alliance', exampleMacro, '🎃{⛏🎖🏰}[🌲]pa
 	alliance: '🌲',
 	bonus: '🎃',
 	name: 'paul'
+})
+
+test('russian name', exampleMacro, '🗡Макс', {
+	achievements: undefined,
+	alliance: undefined,
+	bonus: '🗡',
+	name: 'Макс'
 })
 
 // After the zombie there is a zero width joiner
