@@ -320,6 +320,21 @@ Winners: A, B, C
 Losers: Z`
 	}, {
 		information: {battlereport: {
+			won: false,
+			attack: false,
+			enemyAlliance: '🛰',
+			enemies: ['L', 'F', 'G'],
+			friends: ['A', 'B', 'C'],
+			soldiersTotal: 7320,
+			soldiersAlive: 0,
+			gold: -490222,
+			terra: -2132
+		}},
+		text: `‼️The battle with alliance [🛰​]Имперская гвардия complete. Unfortunately, B, your alliance lose. None of the 7320⚔ returned from the battlefield... You lose 490222💰, and 2132🗺 joined to [🛰​]Имперская гвардия.
+Winners: L, F, G
+Losers: A, B, C`
+	}, {
+		information: {battlereport: {
 			won: true,
 			attack: true,
 			enemies: ['Z'],

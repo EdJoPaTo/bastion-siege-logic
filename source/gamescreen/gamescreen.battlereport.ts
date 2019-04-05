@@ -70,8 +70,8 @@ function rawContentFromRussian(content: string): Raw {
 	const won = /Поздравляю/.test(content)
 
 	const me = regexHelper.getStrict(content, won ?
-		/Поздравляю, ([^!]+)!/ :
-		/К сожалению, ([^,]+), твоя армия потерпела поражение./
+		/Поздравляю, ([^!]+)! / :
+		/К сожалению, ([^,]+), /
 	)
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /Битва с (?:альянсом )?([\s\S]+) окончена/)
@@ -100,8 +100,8 @@ function rawContentFromEnglish(content: string): Raw {
 	const basicRaw = getBattlereportBasicRaw(content)
 	const won = /Your (?:(?:army)|(?:alliance)) won/.test(content)
 	const me = regexHelper.getStrict(content, won ?
-		/Congratulations, ([^!]+)!/ :
-		/Unfortunately, ([^,]+), your army lose./
+		/Congratulations, ([^!]+)! Your / :
+		/Unfortunately, ([^,]+), your /
 	)
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /battle with (?:alliance )?([\s\S]+) complete/)
