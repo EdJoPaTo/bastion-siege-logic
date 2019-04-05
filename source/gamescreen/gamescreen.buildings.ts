@@ -27,9 +27,9 @@ export function buildings(content: string): Gamescreen {
 	}
 
 	const buildings: Buildings = {
-		townhall: regexHelper.getOptionalNumber(content, `${EMOJI.townhall}\\s+(\\d+)`) || 0,
+		townhall: regexHelper.getNumberStrict(content, `${EMOJI.townhall}\\s+(\\d+)`),
 		storage: regexHelper.getOptionalNumber(content, `${EMOJI.storage}\\s+(\\d+)`) || 0,
-		houses: regexHelper.getOptionalNumber(content, `${EMOJI.houses}\\s+(\\d+)`) || 0,
+		houses: regexHelper.getNumberStrict(content, `${EMOJI.houses}\\s+(\\d+)`),
 		farm: regexHelper.getOptionalNumber(content, `${EMOJI.farm}\\s+(\\d+)`) || 0,
 		sawmill: regexHelper.getOptionalNumber(content, `${EMOJI.sawmill}\\s+(\\d+)`) || 0,
 		mine: regexHelper.getOptionalNumber(content, `${EMOJI.mine}\\s+(\\d+)`) || 0,

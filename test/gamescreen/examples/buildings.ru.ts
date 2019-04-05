@@ -67,6 +67,13 @@ const examples: Testexample[] = [
 ⚔Требушет 21​✅   3/5👥
 ⚔Баллиста 30​✅   7/7👥`
 	}, {
+		type: 'workshop',
+		information: {workshop: {
+			trebuchet: 0,
+			ballista: 0
+		}},
+		text: 'Мастерская'
+	}, {
 		type: 'trebuchet',
 		information: {},
 		text: `⚔Требушет

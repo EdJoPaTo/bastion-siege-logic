@@ -60,6 +60,24 @@ Food        11434985🍖`
 
 What will we build?`
 	}, {
+		type: 'buildings',
+		information: {buildings: {
+			townhall: 1,
+			storage: 0,
+			houses: 1,
+			farm: 0,
+			sawmill: 0,
+			mine: 0,
+			barracks: 0,
+			wall: 0
+		}},
+		text: `Buildings
+
+🏤     1⛔️
+🏘     1⛔️     10/20👥
+
+First build the 🏚Storage to add resources. In 🏚Storage can be stored 🌲Wood, ⛏Stone и 🍖Food. Every worker in one game day brings 1 resource from each production buildind.`
+	}, {
 		type: 'storage',
 		information: {resources: {
 			gold: 3439446,
@@ -88,6 +106,13 @@ Upgrade
          22800600💰⛔️
          11400300🌲​✅
          11400300⛏​✅`
+	}, {
+		type: 'workshop',
+		information: {workshop: {
+			trebuchet: 0,
+			ballista: 0
+		}},
+		text: 'Workshop'
 	}, {
 		type: 'workshop',
 		information: {workshop: {
