@@ -19,9 +19,9 @@ function createNameRegex(): RegExp {
 		// First part (negative karma, conquerer, halloween, …)
 		`(${e}+)?`,
 		// Achievements
-		`(?:{(${e}+)})?`,
+		/(?:{([^}]+)})?/,
 		// Alliance
-		`(?:\\[(${e}+)\\])?`,
+		/(?:\[([^\]]+)\])?/,
 		// Name
 		/(.+)/
 	]
