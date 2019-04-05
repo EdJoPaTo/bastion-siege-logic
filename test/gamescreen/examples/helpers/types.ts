@@ -1,9 +1,9 @@
-import {Gamescreen} from '../../../../source/gamescreen/gamescreen-type'
+import {GamescreenContent} from '../../../../source/gamescreen/gamescreen-type'
 
 export interface Testexample {
 	// TODO: still type?
 	type?: string;
 	language: string;
-	information: Gamescreen;
+	information: GamescreenContent;
 	text: string;
 }

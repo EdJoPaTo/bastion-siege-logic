@@ -5,14 +5,14 @@ import {
 	BattleSolo,
 	DomainStats,
 	Effect,
-	Gamescreen
+	GamescreenContent
 } from './gamescreen-type'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
 
 const EFFECTS_REGEX = /(.+) -\s+([^.]+)\./
-export function effects(content: string): Gamescreen {
+export function effects(content: string): GamescreenContent {
 	if (!contentFilter.includesAny(content, 'Will last until: ', 'Will continue: ', 'Продлится до: ', 'Продлится еще: ')) {
 		return {}
 	}
@@ -65,14 +65,14 @@ const WAR_REGEX_RUSSIAN: WarRegex = {
 	defence: /Защита: (.+)/
 }
 
-export function war(content: string): Gamescreen {
+export function war(content: string): GamescreenContent {
 	const isEnglish = contentFilter.starts(content, 'Wins')
 	const isRussian = contentFilter.starts(content, 'Победы')
 	if (!(isEnglish || isRussian)) {
 		return {}
 	}
 
-	const result: Gamescreen = {
+	const result: GamescreenContent = {
 		domainStats: getWarMenuDomainStats(content)
 	}
 

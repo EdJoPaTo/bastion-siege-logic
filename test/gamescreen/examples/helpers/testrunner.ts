@@ -1,6 +1,6 @@
 import test, {ExecutionContext} from 'ava'
 
-import {parseGamescreen} from '../../../../source/gamescreen/gamescreen'
+import {parseGamescreenContent} from '../../../../source/gamescreen/gamescreen'
 
 import {Testexample} from './types'
 
@@ -10,7 +10,7 @@ export function testrunner(t: ExecutionContext, example: Testexample): void {
 	t.log(example.information)
 	t.log(example.text)
 
-	const result = parseGamescreen(example.text)
+	const result = parseGamescreenContent(example.text)
 	t.deepEqual(result, example.information)
 }
 

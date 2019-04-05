@@ -2,13 +2,13 @@ import {Buildings, Workshop} from '../buildings'
 import {Resources} from '../resources'
 
 import {EMOJI} from './emoji'
-import {Gamescreen} from './gamescreen-type'
+import {GamescreenContent} from './gamescreen-type'
 import {parsePlayer} from './player'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
 
-export function main(content: string): Gamescreen {
+export function main(content: string): GamescreenContent {
 	if (!contentFilter.includesAny(content, 'Сезон', 'Season')) {
 		return {}
 	}
@@ -21,7 +21,7 @@ export function main(content: string): Gamescreen {
 	}
 }
 
-export function buildings(content: string): Gamescreen {
+export function buildings(content: string): GamescreenContent {
 	if (!contentFilter.startsAny(content, 'Buildings', 'Постройки')) {
 		return {}
 	}
@@ -40,7 +40,7 @@ export function buildings(content: string): Gamescreen {
 	return {buildings}
 }
 
-export function workshop(content: string): Gamescreen {
+export function workshop(content: string): GamescreenContent {
 	if (contentFilter.starts(content, 'Workshop')) {
 		const workshop: Workshop = {
 			trebuchet: regexHelper.getOptionalNumber(content, `${EMOJI.trebuchet}Trebuchet\\s+(\\d+)`) || 0,
@@ -60,7 +60,7 @@ export function workshop(content: string): Gamescreen {
 	return {}
 }
 
-export function storage(content: string): Gamescreen {
+export function storage(content: string): GamescreenContent {
 	if (!contentFilter.starts(content, EMOJI.storage)) {
 		return {}
 	}
@@ -75,7 +75,7 @@ export function storage(content: string): Gamescreen {
 	return {resources}
 }
 
-export function resources(content: string): Gamescreen {
+export function resources(content: string): GamescreenContent {
 	if (contentFilter.startsAny(content, 'Ресурсы', 'Resources')) {
 		return {resources: parseResources(content)}
 	}

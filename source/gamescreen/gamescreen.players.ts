@@ -1,11 +1,11 @@
-import {Gamescreen} from './gamescreen-type'
+import {GamescreenContent} from './gamescreen-type'
 import {parsePlayer} from './player'
 import {EMOJI} from './emoji'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
 
-export function allianceBattleStart(content: string): Gamescreen {
+export function allianceBattleStart(content: string): GamescreenContent {
 	if (contentFilter.includesAll(content, 'Your ally ', ' attacked ', ' help ')) {
 		const defenceMatch = /Your ally (.+) was attacked by (.+) from /.exec(content)
 		const attackMatch = /Your ally (.+) attacked (.+) from /.exec(content)
@@ -45,7 +45,7 @@ export function allianceBattleStart(content: string): Gamescreen {
 const allianceBattleSupportAttack = EMOJI.alliancebattle + EMOJI.attack
 const allianceBattleSupportDefence = EMOJI.alliancebattle + EMOJI.defence
 
-export function allianceBattleSupport(content: string): Gamescreen {
+export function allianceBattleSupport(content: string): GamescreenContent {
 	if (contentFilter.startsAny(content, allianceBattleSupportAttack, allianceBattleSupportDefence)) {
 		const trimmedText = content.startsWith(allianceBattleSupportAttack) ?
 			content.slice(allianceBattleSupportAttack.length) :
@@ -67,7 +67,7 @@ export function allianceBattleSupport(content: string): Gamescreen {
 	return {}
 }
 
-export function allianceJoinRequest(content: string): Gamescreen {
+export function allianceJoinRequest(content: string): GamescreenContent {
 	if (contentFilter.ends(content, 'wants to enter your alliance.')) {
 		return {allianceJoinRequest: regexHelper.getPlayer(content, /^([\s\S]+) from /)}
 	}
@@ -79,7 +79,7 @@ export function allianceJoinRequest(content: string): Gamescreen {
 	return {}
 }
 
-export function attackIncoming(content: string): Gamescreen {
+export function attackIncoming(content: string): GamescreenContent {
 	if (contentFilter.ends(content, 'Army will be sent to the defense!')) {
 		return {attackIncoming: regexHelper.getPlayer(content, /attacked! ([\s\S]+) approaches/)}
 	}
@@ -91,7 +91,7 @@ export function attackIncoming(content: string): Gamescreen {
 	return {}
 }
 
-export function attackscout(content: string): Gamescreen {
+export function attackscout(content: string): GamescreenContent {
 	const isEnglish = contentFilter.starts(content, 'Our scouts found ')
 	const isRussian = contentFilter.starts(content, 'Разведчики докладывают')
 

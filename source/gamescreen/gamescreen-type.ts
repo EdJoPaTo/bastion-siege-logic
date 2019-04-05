@@ -48,7 +48,7 @@ export interface Effect {
 	minutesRemaining?: number;
 }
 
-export interface Gamescreen {
+export interface GamescreenContent {
 	type?: string;
 
 	allianceBattleStart?: AllianceBattleStart;
@@ -67,4 +67,9 @@ export interface Gamescreen {
 	player?: Player;
 	resources?: Resources;
 	workshop?: Workshop;
+}
+
+export interface Gamescreen extends GamescreenContent {
+	timestamp: number;
+	ingameTimestamp: number;
 }

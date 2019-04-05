@@ -1,4 +1,4 @@
-import {Gamescreen, CastleSiegeParticipant} from './gamescreen-type'
+import {GamescreenContent, CastleSiegeParticipant} from './gamescreen-type'
 import {parsePlayer} from './player'
 import {EMOJI} from './emoji'
 import {inputTextCleanup} from './text-cleanup'
@@ -8,7 +8,7 @@ import * as regexHelper from './helpers/regex'
 
 const JOIN_BEGIN_EMOJIS = EMOJI.attack + EMOJI.castle + ' '
 
-export function joined(input: string): Gamescreen {
+export function joined(input: string): GamescreenContent {
 	const content = inputTextCleanup(input)
 	if (contentFilter.startsAny(content, JOIN_BEGIN_EMOJIS + 'Твоя армия присоединилась к осаде на', JOIN_BEGIN_EMOJIS + 'Your army joined the siege on', JOIN_BEGIN_EMOJIS + 'Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.')) {
 		return {type: 'castleSiegeYouJoined'}
@@ -57,7 +57,7 @@ export function joined(input: string): Gamescreen {
 	throw new Error('you found a new language?')
 }
 
-export function participants(content: string): Gamescreen {
+export function participants(content: string): GamescreenContent {
 	if (!contentFilter.includesAny(content, 'окончено. Осада вот-вот начнется. В ней примут участие', 'complete. The siege is about to begin. In it will take part')) {
 		return {}
 	}

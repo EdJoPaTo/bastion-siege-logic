@@ -1,7 +1,7 @@
 import {BattlereportRaw} from '../battlereport'
 
 import {EMOJI} from './emoji'
-import {Gamescreen} from './gamescreen-type'
+import {GamescreenContent} from './gamescreen-type'
 import {isMystic} from './mystics'
 
 import * as contentFilter from './helpers/content-filter'
@@ -40,7 +40,7 @@ interface SoldiersRegExp {
 
 const REGEX_ARMY = `${EMOJI.army}.?`
 
-export function battlereport(content: string): Gamescreen {
+export function battlereport(content: string): GamescreenContent {
 	const isEnglish = contentFilter.starts(content, '‼️The battle with ')
 	const isRussian = contentFilter.starts(content, '‼️Битва с ')
 
