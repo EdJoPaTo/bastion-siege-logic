@@ -1,6 +1,7 @@
 export * from './emoji'
 export * from './gamescreen-type'
 export * from './gamescreen'
+export * from './gametext'
 export * from './mystics'
 export * from './player'
 export * from './text-cleanup'
