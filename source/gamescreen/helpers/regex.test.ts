@@ -31,3 +31,10 @@ test('getNumber unsuccessful', t => {
 	const result = regexHelper.getOptionalNumber('null€', /(\d+)€/)
 	t.is(result, undefined)
 })
+
+test('getStrict undefined throws', t => {
+	t.throws(
+		() => regexHelper.getStrict('was das denn?', /was (\d+)/),
+		'not a match'
+	)
+})
