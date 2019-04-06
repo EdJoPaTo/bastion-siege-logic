@@ -173,7 +173,7 @@ function getSoldiers(content: string, regexps: SoldiersRegExp): Soldiers {
 
 function getBattlereportFromRaw(raw: Raw): BattlereportRaw {
 	// XOR: when terra & won -> attack, when no terra and lost -> attack
-	const attack = (raw.terra > 0 && raw.won) || (raw.terra === 0 && !raw.won)
+	const attack = raw.won ? raw.terra > 0 : raw.terra === 0
 
 	const lossNegation = raw.won ? 1 : -1
 	const gold = (raw.gold * lossNegation) || 0
