@@ -1,13 +1,26 @@
-import {Buildings, Workshop} from '../buildings'
+import {Buildings, ConstructionName, Workshop} from '../buildings'
 import {Resources} from '../resources'
 
 import {EMOJI} from './emoji'
 import {GamescreenContent} from './gamescreen-type'
 import {GAMETEXT_CONSTRUCTIONS} from './gametext'
+import {inputTextCleanup} from './text-cleanup'
 import {parsePlayer} from './player'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
+
+const NOT_SPECIFIED_BETTER: ConstructionName[] = [
+	'townhall',
+	'houses',
+	'farm',
+	'sawmill',
+	'mine',
+	'barracks',
+	'wall',
+	'trebuchet',
+	'ballista'
+]
 
 export function main(content: string): GamescreenContent {
 	if (!contentFilter.includesAny(content, 'Сезон', 'Season')) {
@@ -80,6 +93,25 @@ export function storage(content: string): GamescreenContent {
 	}
 }
 
+export function otherConstructions(content: string): GamescreenContent {
+	const lines = content.split('\n')
+
+	if (lines.length <= 5) {
+		// Constructions can be upgraded which alone requires 5 lines, have a level, …
+		return {}
+	}
+
+	const firstLine = inputTextCleanup(lines[0])
+
+	for (const c of NOT_SPECIFIED_BETTER) {
+		if (isConstruction(firstLine, c)) {
+			return {type: c}
+		}
+	}
+
+	return {}
+}
+
 export function resources(content: string): GamescreenContent {
 	if (contentFilter.startsAny(content, 'Ресурсы', 'Resources')) {
 		return {
@@ -89,6 +121,12 @@ export function resources(content: string): GamescreenContent {
 	}
 
 	return {}
+}
+
+function isConstruction(content: string, construction: ConstructionName): boolean {
+	const emoji = EMOJI[construction]
+	const {en, ru} = GAMETEXT_CONSTRUCTIONS[construction]
+	return contentFilter.startsAny(content, emoji + en, emoji + ru)
 }
 
 function parseResources(content: string): Resources {
