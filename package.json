@@ -77,7 +77,7 @@
 		],
 		"rules": {
 			"import/named": "warn",
-			"@typescript-eslint/promise-function-async": "off",
+			"@typescript-eslint/promise-function-async": "warn",
 			"ava/no-ignored-test-files": "off"
 		}
 	}
