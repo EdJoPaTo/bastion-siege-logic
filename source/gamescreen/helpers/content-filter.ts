@@ -1,5 +1,3 @@
-// TODO: require 1 expected? how?
-
 export function starts(content: string, expected: string): boolean {
 	return content.startsWith(expected)
 }
@@ -12,26 +10,26 @@ export function ends(content: string, expected: string): boolean {
 	return content.endsWith(expected)
 }
 
-export function startsAll(content: string, ...expected: string[]): boolean {
-	return expected.every(o => content.startsWith(o))
+export function startsAll(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].every(o => content.startsWith(o))
 }
 
-export function includesAll(content: string, ...expected: string[]): boolean {
-	return expected.every(o => content.includes(o))
+export function includesAll(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].every(o => content.includes(o))
 }
 
-export function endsAll(content: string, ...expected: string[]): boolean {
-	return expected.every(o => content.endsWith(o))
+export function endsAll(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].every(o => content.endsWith(o))
 }
 
-export function startsAny(content: string, ...expected: string[]): boolean {
-	return expected.some(o => content.startsWith(o))
+export function startsAny(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].some(o => content.startsWith(o))
 }
 
-export function includesAny(content: string, ...expected: string[]): boolean {
-	return expected.some(o => content.includes(o))
+export function includesAny(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].some(o => content.includes(o))
 }
 
-export function endsAny(content: string, ...expected: string[]): boolean {
-	return expected.some(o => content.endsWith(o))
+export function endsAny(content: string, first: string, second: string, ...more: string[]): boolean {
+	return [first, second, ...more].some(o => content.endsWith(o))
 }
