@@ -3,7 +3,7 @@ import {Resources} from '../resources'
 
 import {EMOJI} from './emoji'
 import {GamescreenContent} from './gamescreen-type'
-import {GAMETEXT_CONSTRUCTIONS} from './gametext'
+import {GAMETEXT} from './gametext'
 import {inputTextCleanup} from './text-cleanup'
 import {parsePlayer} from './player'
 
@@ -58,16 +58,16 @@ export function buildings(content: string): GamescreenContent {
 export function workshop(content: string): GamescreenContent {
 	if (contentFilter.starts(content, 'Workshop')) {
 		const workshop: Workshop = {
-			trebuchet: regexHelper.getOptionalNumber(content, `${EMOJI.trebuchet}${GAMETEXT_CONSTRUCTIONS.trebuchet.en}\\s+(\\d+)`) || 0,
-			ballista: regexHelper.getOptionalNumber(content, `${EMOJI.ballista}${GAMETEXT_CONSTRUCTIONS.ballista.en}\\s+(\\d+)`) || 0
+			trebuchet: regexHelper.getOptionalNumber(content, `${EMOJI.trebuchet}${GAMETEXT.trebuchet.en}\\s+(\\d+)`) || 0,
+			ballista: regexHelper.getOptionalNumber(content, `${EMOJI.ballista}${GAMETEXT.ballista.en}\\s+(\\d+)`) || 0
 		}
 		return {workshop}
 	}
 
 	if (contentFilter.starts(content, 'Мастерская')) {
 		const workshop: Workshop = {
-			trebuchet: regexHelper.getOptionalNumber(content, `${EMOJI.trebuchet}${GAMETEXT_CONSTRUCTIONS.trebuchet.ru}\\s+(\\d+)`) || 0,
-			ballista: regexHelper.getOptionalNumber(content, `${EMOJI.ballista}${GAMETEXT_CONSTRUCTIONS.ballista.ru}\\s+(\\d+)`) || 0
+			trebuchet: regexHelper.getOptionalNumber(content, `${EMOJI.trebuchet}${GAMETEXT.trebuchet.ru}\\s+(\\d+)`) || 0,
+			ballista: regexHelper.getOptionalNumber(content, `${EMOJI.ballista}${GAMETEXT.ballista.ru}\\s+(\\d+)`) || 0
 		}
 		return {workshop}
 	}
@@ -124,9 +124,7 @@ export function resources(content: string): GamescreenContent {
 }
 
 function isConstruction(content: string, construction: ConstructionName): boolean {
-	const emoji = EMOJI[construction]
-	const {en, ru} = GAMETEXT_CONSTRUCTIONS[construction]
-	return contentFilter.startsAny(content, emoji + en, emoji + ru)
+	return contentFilter.startsWithGametext(content, construction, construction, false)
 }
 
 function parseResources(content: string): Resources {

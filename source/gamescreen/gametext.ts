@@ -5,7 +5,7 @@ interface LangDict {
 	ru: string;
 }
 
-export const GAMETEXT_CONSTRUCTIONS: Dict<LangDict> = {
+export const GAMETEXT: Dict<LangDict> = {
 	townhall: {
 		en: 'Town hall',
 		ru: 'Ратуша'

@@ -1,3 +1,6 @@
+import {EMOJI} from '../emoji'
+import {GAMETEXT} from '../gametext'
+
 export function starts(content: string, expected: string): boolean {
 	return content.startsWith(expected)
 }
@@ -32,4 +35,12 @@ export function includesAny(content: string, first: string, second: string, ...m
 
 export function endsAny(content: string, first: string, second: string, ...more: string[]): boolean {
 	return [first, second, ...more].some(o => content.endsWith(o))
+}
+
+export function startsWithGametext(content: string, emojiSelector: string, gametextSelector: string, spaceSeperated: boolean): boolean {
+	const emoji = EMOJI[emojiSelector]
+	const space = spaceSeperated ? ' ' : ''
+	const prefix = emoji + space
+	const {en, ru} = GAMETEXT[gametextSelector]
+	return startsAny(content, `${prefix}${en}`, `${prefix}${ru}`)
 }

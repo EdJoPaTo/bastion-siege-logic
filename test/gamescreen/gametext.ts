@@ -1,18 +1,25 @@
-import test from 'ava'
+import test, {ExecutionContext} from 'ava'
 
 import {CONSTRUCTIONS} from '../../source'
 
-import {GAMETEXT_CONSTRUCTIONS} from '../../source/gamescreen/gametext'
+import {GAMETEXT} from '../../source/gamescreen/gametext'
 
-test('constructions have en and ru', t => {
-	const keys = Object.keys(GAMETEXT_CONSTRUCTIONS)
+function translationMissing(t: ExecutionContext, lang: 'en' | 'ru'): void {
+	const keys = Object.keys(GAMETEXT)
 	for (const key of keys) {
-		const entry = GAMETEXT_CONSTRUCTIONS[key]
-		t.truthy(entry.en, `${key} is missing en translation`)
-		t.truthy(entry.ru, `${key} is missing ru translation`)
+		const entry = GAMETEXT[key]
+		t.truthy(entry[lang], `${key} is missing translation`)
 	}
-})
+}
 
-test('constructions complete', t => {
-	t.deepEqual(Object.keys(GAMETEXT_CONSTRUCTIONS), CONSTRUCTIONS, 'construction missing')
-})
+test('gametexts have en', translationMissing, 'en')
+test('gametexts have ru', translationMissing, 'ru')
+
+function keysIncluded(t: ExecutionContext, keysRequired: string[]): void {
+	const keys = Object.keys(GAMETEXT)
+	for (const req of keysRequired) {
+		t.true(keys.includes(req), `${req} is missing`)
+	}
+}
+
+test('constructions complete', keysIncluded, CONSTRUCTIONS)
