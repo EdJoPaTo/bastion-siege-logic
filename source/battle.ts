@@ -5,7 +5,7 @@ import {
 import {
 	calcBuildingCost,
 	calcBuildingCostUntil
-} from './building-cost'
+} from './buildings/cost'
 
 export type BattleType = keyof BattleOdds
 export type BattleBuilding = keyof BattleBuildingOdds

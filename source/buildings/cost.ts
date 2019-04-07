@@ -1,13 +1,13 @@
 import {
+	ConstructionResources,
+	calcMinutesNeeded
+} from '../resources'
+
+import {
 	BUILDING_COST_FACTORS,
 	ConstructionName,
 	Buildings
-} from './buildings'
-
-import {
-	ConstructionResources,
-	calcMinutesNeeded
-} from './resources'
+} from './building-types'
 
 export function calcBuildingCost(building: ConstructionName, currentBuildingLevel: number): ConstructionResources {
 	return {

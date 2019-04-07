@@ -1,6 +1,6 @@
 import test, {ExecutionContext} from 'ava'
 
-import {calcBuildingCost} from '../source/building-cost'
+import {calcBuildingCost} from '../source/buildings/cost'
 
 import {
 	calcBuildingCostPerWinchance,

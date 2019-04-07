@@ -7,9 +7,9 @@ import {
 	calcStorageLevelNeededForUpgrade,
 	calcTownhallLevelNeededForUpgrade,
 	calcTownhallLevelNeededForGold
-} from '../source/building-required'
+} from '../../source/buildings/required'
 
-import {buildingsOne} from './helpers/buildings'
+import {buildingsOne} from '../helpers/buildings'
 
 test('townhall required storage level', t => {
 	t.is(calcStorageLevelNeededForUpgrade('townhall', 5), 3)

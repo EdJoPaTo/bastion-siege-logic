@@ -1,10 +1,10 @@
 import {
-	Buildings
-} from './buildings'
+	calcGoldIncomePerPerson
+} from '../resources'
 
 import {
-	calcGoldIncomePerPerson
-} from './resources'
+	Buildings
+} from './building-types'
 
 export function calcHousesCapacity(housesLevel: number): number {
 	return housesLevel * 20

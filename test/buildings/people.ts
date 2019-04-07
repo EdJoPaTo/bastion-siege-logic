@@ -7,9 +7,9 @@ import {
 	calcHousesPeopleIncome,
 	calcRecoveryMissingPeople,
 	calcWallArcherCapacity
-} from '../source/building-people'
+} from '../../source/buildings/people'
 
-import {buildingsOne} from './helpers/buildings'
+import {buildingsOne} from '../helpers/buildings'
 
 test('houses capacity', t => {
 	t.is(calcHousesCapacity(1), 20, 'level 1')

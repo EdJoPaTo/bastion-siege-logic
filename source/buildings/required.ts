@@ -1,13 +1,13 @@
 import {
+	calcGoldCapacity,
+	calcStorageCapacity
+} from '../resources'
+
+import {
 	BUILDING_COST_FACTORS,
 	Buildings,
 	ConstructionName
-} from './buildings'
-
-import {
-	calcGoldCapacity,
-	calcStorageCapacity
-} from './resources'
+} from './building-types'
 
 export function calcStorageLevelNeededForUpgrade(building: ConstructionName, wantedBuildingLevel: number): number {
 	const maxResourceFactor = Math.max(BUILDING_COST_FACTORS[building][1], BUILDING_COST_FACTORS[building][2])
