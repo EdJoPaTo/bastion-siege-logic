@@ -4,6 +4,23 @@ import {testrunnerMany, Testexample} from './helpers'
 
 const examples: Testexample[] = [
 	{
+		information: {
+			type: 'nextCastleSiege'
+		},
+		text: `🏰 Castles
+
+Diamond castle
+[🌲​]Шервудский лес
+Until the next siege: 51 h.
+
+Ruby castle
+[🦊​]Лисы
+Until the next siege: 24 h.
+
+Sapphire castle
+[🛰​]Имперская гвардия
+Until the next siege: 5 h.`
+	}, {
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
 			alliance: '🌶',

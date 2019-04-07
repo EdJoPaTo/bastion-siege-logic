@@ -87,3 +87,11 @@ export function participants(content: string): GamescreenContent {
 
 	return {castleSiegeParticipants: alliances}
 }
+
+export function nextCastleSiege(content: string): GamescreenContent {
+	if (contentFilter.startsWithGametext(content, 'castle', 'nextCastleSiege', true)) {
+		return {type: 'nextCastleSiege'}
+	}
+
+	return {}
+}

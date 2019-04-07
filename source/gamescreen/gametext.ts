@@ -45,5 +45,9 @@ export const GAMETEXT: Dict<LangDict> = {
 	ballista: {
 		en: 'Ballista',
 		ru: 'Баллиста'
+	},
+	nextCastleSiege: {
+		en: 'Castles',
+		ru: 'Замки'
 	}
 }
