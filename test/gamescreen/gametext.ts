@@ -8,7 +8,8 @@ test('constructions have en and ru', t => {
 	const keys = Object.keys(GAMETEXT_CONSTRUCTIONS)
 	for (const key of keys) {
 		const entry = GAMETEXT_CONSTRUCTIONS[key]
-		t.deepEqual(Object.keys(entry), ['en', 'ru'])
+		t.truthy(entry.en, `${key} is missing en translation`)
+		t.truthy(entry.ru, `${key} is missing ru translation`)
 	}
 })
 
