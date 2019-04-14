@@ -19,6 +19,12 @@ For 7050⚔ of 7050⚔ not found a place in the 🛡Barracks and had to disband.
 7050⚔ of the 7050⚔ dismissed soldiers did not find myself dwelling places in your domain.`
 	}, {
 		information: {
+			type: 'patrolreport'
+		},
+		text: `⚔ The battle was easy and you won. However, the bandits started a fire. Your soldiers were able to take only a part of the treasure, until everything was on fire. 1166⚔ returned home. Your treasury is replenished 8172829💰.
+For 1166⚔ of 1166⚔ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.`
+	}, {
+		information: {
 			type: 'war',
 			domainStats: {
 				wins: 4817,
