@@ -10,7 +10,12 @@ const JOIN_BEGIN_EMOJIS = EMOJI.attack + EMOJI.castle + ' '
 
 export function joined(input: string): GamescreenContent {
 	const content = inputTextCleanup(input)
-	if (contentFilter.startsAny(content, JOIN_BEGIN_EMOJIS + 'Твоя армия присоединилась к осаде на', JOIN_BEGIN_EMOJIS + 'Your army joined the siege on', JOIN_BEGIN_EMOJIS + 'Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.')) {
+	if (contentFilter.startsAny(content,
+		JOIN_BEGIN_EMOJIS + 'Твоя армия присоединилась к осаде на',
+		JOIN_BEGIN_EMOJIS + 'Your army joined the siege on',
+		JOIN_BEGIN_EMOJIS + 'Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.',
+		JOIN_BEGIN_EMOJIS + 'Твой альянс успешно присоединился к осаде замка. Вся твоя армия отправлена к его стенам. Всем участникам твоего альянса отправлены уведомления о вступлении в осаду.'
+	)) {
 		return {type: 'castleSiegeYouJoined'}
 	}
 
