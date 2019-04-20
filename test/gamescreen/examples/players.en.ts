@@ -63,6 +63,23 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: 'Your ally [🌶]Jan Breydel attacked {⛏}[🐮]Myadib from the alliance [🐮​]Young Dead Cow! You can join the battle and help him in the attack.'
 	}, {
+		information: {allianceBattleStart: {
+			attack: true,
+			ally: {
+				achievements: undefined,
+				alliance: '🛸',
+				bonus: undefined,
+				name: 'R2-D2'
+			},
+			enemy: {
+				achievements: '⛏',
+				alliance: undefined,
+				bonus: undefined,
+				name: 'WVX'
+			}
+		}},
+		text: 'Your ally [🛸]R2-D2 attacked {⛏}WVX'
+	}, {
 		information: {allianceBattleSupport: {
 			achievements: '⛏💎🎖',
 			alliance: '⚡',

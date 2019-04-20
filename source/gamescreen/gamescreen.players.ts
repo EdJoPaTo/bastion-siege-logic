@@ -6,9 +6,12 @@ import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
 
 export function allianceBattleStart(content: string): GamescreenContent {
-	if (contentFilter.includesAll(content, 'Your ally ', ' attacked ', ' help ')) {
-		const defenceMatch = /Your ally (.+) was attacked by (.+) from /.exec(content)
-		const attackMatch = /Your ally (.+) attacked (.+) from /.exec(content)
+	if (contentFilter.includesAll(content, 'Your ally ', ' attacked ')) {
+		const indexOf = content.indexOf(' from ')
+		const shortenedContent = indexOf < 0 ? content : content.slice(0, indexOf)
+
+		const defenceMatch = /Your ally (.+) was attacked by (.+)/.exec(shortenedContent)
+		const attackMatch = /Your ally (.+) attacked (.+)/.exec(shortenedContent)
 
 		const allyMatch = defenceMatch ? defenceMatch : attackMatch
 		const enemyMatch = defenceMatch ? defenceMatch : attackMatch
@@ -26,11 +29,14 @@ export function allianceBattleStart(content: string): GamescreenContent {
 		}}
 	}
 
-	if (contentFilter.includesAll(content, ' союзник', ' атаковал ', ' Ты можешь ')) {
-		const regex = /союзник.? (.+) атаковал (.+) из /
-		const attack = /атаке/.test(content)
-		const ally = regexHelper.getPlayer(content, regex, 1)
-		const enemy = regexHelper.getPlayer(content, regex, 2)
+	if (contentFilter.includesAll(content, ' союзник', ' атаковал ')) {
+		const indexOf = content.indexOf(' из ')
+		const shortenedContent = indexOf < 0 ? content : content.slice(0, indexOf)
+
+		const regex = /союзник.? (.+) атаковал (.+)$/
+		const attack = /Твой/.test(content)
+		const ally = regexHelper.getPlayer(shortenedContent, regex, 1)
+		const enemy = regexHelper.getPlayer(shortenedContent, regex, 2)
 
 		return {allianceBattleStart: {
 			attack,

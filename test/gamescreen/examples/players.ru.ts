@@ -58,6 +58,23 @@ const examples: Testexample[] = [
 		}},
 		text: 'Твой союзник {🎖}[🌶]LOOOL атаковал {⛏}[💋]Ganda из альянса [💋​]Ca! Ты можешь вступить в бой и помочь ему в атаке.'
 	}, {
+		information: {allianceBattleStart: {
+			attack: true,
+			ally: {
+				achievements: '💎',
+				alliance: '🏅',
+				bonus: undefined,
+				name: 'Hodor'
+			},
+			enemy: {
+				achievements: undefined,
+				alliance: undefined,
+				bonus: undefined,
+				name: 'John'
+			}
+		}},
+		text: 'Твой союзник {💎}[🏅]Hodor атаковал John'
+	}, {
 		information: {allianceBattleSupport: {
 			achievements: undefined,
 			alliance: '🌶',
