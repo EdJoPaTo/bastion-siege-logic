@@ -29,6 +29,18 @@ const examples: Testexample[] = [
 		text: `Our scouts found {⛏💎🎖}Homer
 Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll get 3☯ karma points.`
 	}, {
+		information: {attackscout: {
+			player: {
+				achievements: undefined,
+				alliance: undefined,
+				bonus: undefined,
+				name: 'SоdaЕffеct'
+			},
+			terra: 4875,
+			karma: 0
+		}},
+		text: 'Our scouts found SоdaЕffеct in his domain SoddaLand with 4875🗺 territory.'
+	}, {
 		information: {allianceBattleStart: {
 			attack: false,
 			ally: {
