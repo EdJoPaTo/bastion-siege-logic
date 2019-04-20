@@ -144,6 +144,6 @@ Stalker
 Еда         48506250🍖`
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'ru'}))
 
 testrunnerMany(examples)

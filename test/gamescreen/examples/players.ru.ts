@@ -88,6 +88,6 @@ const examples: Testexample[] = [
 		text: 'В твой альянс желает вступить Bob из Village с территорией 666🗺'
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'ru'}))
 
 testrunnerMany(examples)

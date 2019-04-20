@@ -97,6 +97,6 @@ const examples: Testexample[] = [
  - 👑hamakedarayanai`
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'ru'}))
 
 testrunnerMany(examples)

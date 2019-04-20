@@ -125,6 +125,6 @@ const examples: Testexample[] = [
 57⚔ из 57⚔ уволенных солдат не нашли себе жилых мест в твоих владениях. Все они были вынуждены безмолвно уйти в закат...`
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'ru'}))
 
 testrunnerMany(examples)
