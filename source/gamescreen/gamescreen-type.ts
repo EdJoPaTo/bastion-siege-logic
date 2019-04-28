@@ -53,6 +53,12 @@ export interface Effect {
 	minutesRemaining?: number;
 }
 
+export interface ListEntry {
+	type: string;
+	name: string;
+	value: string;
+}
+
 export interface GamescreenContent {
 	type?: string;
 
@@ -70,6 +76,7 @@ export interface GamescreenContent {
 	chat?: Chat;
 	domainStats?: DomainStats;
 	effects?: Effect[];
+	list?: ListEntry[];
 	player?: Player;
 	resources?: Resources;
 	workshop?: Workshop;

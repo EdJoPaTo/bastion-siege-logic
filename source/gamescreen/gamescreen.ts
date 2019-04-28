@@ -3,6 +3,7 @@ import {Gamescreen, GamescreenContent} from './gamescreen-type'
 import * as battlereport from './gamescreen.battlereport'
 import * as buildings from './gamescreen.buildings'
 import * as castle from './gamescreen.castle'
+import * as lists from './gamescreen.lists'
 import * as others from './gamescreen.others'
 import * as players from './gamescreen.players'
 
@@ -12,6 +13,7 @@ const availableParser: Parser[] = [
 	battlereport,
 	buildings,
 	castle,
+	lists,
 	others,
 	players
 ]
