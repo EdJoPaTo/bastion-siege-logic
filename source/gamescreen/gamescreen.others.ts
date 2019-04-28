@@ -128,3 +128,18 @@ export function getPatrolreport(content: string): GamescreenContent {
 
 	return {}
 }
+
+const CHAT_PREFIX = '#message /chat\n📣 '
+export function getChat(content: string): GamescreenContent {
+	if (contentFilter.starts(content, CHAT_PREFIX)) {
+		const messageStartIndex = content.indexOf(': ')
+		const sender = content.slice(CHAT_PREFIX.length, messageStartIndex)
+		const text = content.slice(messageStartIndex + 2)
+
+		return {chat: {
+			sender, text
+		}}
+	}
+
+	return {}
+}

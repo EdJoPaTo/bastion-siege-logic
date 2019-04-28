@@ -35,6 +35,11 @@ export interface CastleSiegeParticipant {
 	players: string[];
 }
 
+export interface Chat {
+	sender: string;
+	text: string;
+}
+
 export interface DomainStats {
 	wins: number;
 	karma: number;
@@ -62,6 +67,7 @@ export interface GamescreenContent {
 	castleSiegeAllianceJoined?: CastleSiegeAllianceJoined;
 	castleSiegeParticipants?: CastleSiegeParticipant[];
 	castleSiegePlayerJoined?: Player;
+	chat?: Chat;
 	domainStats?: DomainStats;
 	effects?: Effect[];
 	player?: Player;

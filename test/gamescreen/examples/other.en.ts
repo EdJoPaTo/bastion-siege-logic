@@ -156,6 +156,17 @@ Continues the battle with ❄️Барc`
 	}, {
 		information: {},
 		text: 'Your ⚔️Ballista will receive +100 to accuracy in the battle with the 🐲️Dragon until 2018-12-21 04:30:39 +0000 UTC.'
+	}, {
+		information: {chat: {
+			sender: 'Bob',
+			text: `I was here
+
+yeah!`
+		}},
+		text: `#message /chat
+📣 Bob: I was here
+
+yeah!`
 	}
 ]
 	.map(o => ({...o, language: 'en'}))
