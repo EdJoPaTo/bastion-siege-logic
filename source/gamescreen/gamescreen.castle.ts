@@ -19,7 +19,7 @@ export function joined(input: string): GamescreenContent {
 		return {type: 'castleSiegeYouJoined'}
 	}
 
-	const isEnglish = contentFilter.includes(content, ' joined the siege ')
+	const isEnglish = contentFilter.includesAny(content, ' joined the siege ', ' go against the siege ')
 	const isRussian = contentFilter.includesAny(content, ' присоединился к осаде на ', ' выступил против осады на ')
 	if (!(isEnglish || isRussian)) {
 		return {}
@@ -50,7 +50,7 @@ export function joined(input: string): GamescreenContent {
 	const emojis = EMOJI.army + '.?' + EMOJI.castle
 
 	if (isEnglish) {
-		const regex = `${emojis}(?: The leader of your alliance)? (.+) joined the siege `
+		const regex = `${emojis}(?: The leader of your alliance)? (.+) (?:(?:joined)|(?:go against)) the siege `
 		return {castleSiegePlayerJoined: regexHelper.getPlayer(content, regex)}
 	}
 

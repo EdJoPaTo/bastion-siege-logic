@@ -37,6 +37,14 @@ Until the next siege: 5 h.`
 		}},
 		text: '⚔️🏰 😈{🏰⛏🎖}[🏅]The Flying Dutchman joined the siege on Diamond castle.'
 	}, {
+		information: {castleSiegePlayerJoined: {
+			achievements: undefined,
+			alliance: '🐄',
+			bonus: undefined,
+			name: 'SpeedyWizard'
+		}},
+		text: '⚔️🏰 [🐄]SpeedyWizard go against the siege on Sapphire castle.'
+	}, {
 		comment: 'castleSiegeLeaderJoined',
 		information: {castleSiegePlayerJoined: {
 			achievements: undefined,
