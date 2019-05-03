@@ -67,7 +67,7 @@ function getBattlereportBasicRaw(content: string): BasicRaw {
 
 function rawContentFromRussian(content: string): Raw {
 	const basicRaw = getBattlereportBasicRaw(content)
-	const won = /Поздравляю/.test(content)
+	const won = content.includes('Поздравляю')
 
 	const me = regexHelper.getStrict(content, won ?
 		/Поздравляю, ([^!]+)! / :

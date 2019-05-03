@@ -34,7 +34,7 @@ export function allianceBattleStart(content: string): GamescreenContent {
 		const shortenedContent = indexOf < 0 ? content : content.slice(0, indexOf)
 
 		const regex = /союзник.? (.+) атаковал (.+)$/
-		const attack = /Твой/.test(content)
+		const attack = content.includes('Твой')
 		const ally = regexHelper.getPlayer(shortenedContent, regex, 1)
 		const enemy = regexHelper.getPlayer(shortenedContent, regex, 2)
 
