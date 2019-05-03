@@ -11,6 +11,6 @@ export function getUnicode(text: string): string[] {
 	return result
 }
 
-export function getEmojiInfo(text: string): {type: string; text: string}[] {
+export function getEmojiInfo(text: string): ReadonlyArray<{type: string; text: string}> {
 	return emojiTree(text)
 }
