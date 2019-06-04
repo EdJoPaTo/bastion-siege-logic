@@ -65,7 +65,7 @@ function readList(content: string, regex: RegExp): ListEntry[] {
 
 	const entries = lines
 		.map(o => {
-			const match = o.match(regex)
+			const match = regex.exec(o)
 			if (!match) {
 				return undefined
 			}

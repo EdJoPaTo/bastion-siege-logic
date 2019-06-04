@@ -37,7 +37,7 @@
 		"@typescript-eslint/eslint-plugin": "^1.6.0",
 		"ava": "^2.0.0",
 		"del-cli": "^1.1.0",
-		"eslint-config-xo-typescript": "^0.10.1",
+		"eslint-config-xo-typescript": "^0.12.0",
 		"nyc": "^14.0.0",
 		"ts-node": "^8.0.2",
 		"typescript": "^3.4.2",
@@ -78,7 +78,11 @@
 		"rules": {
 			"import/named": "warn",
 			"@typescript-eslint/promise-function-async": "warn",
-			"ava/no-ignored-test-files": "off"
+			"ava/no-ignored-test-files": "off",
+			"@typescript-eslint/semi": [
+				"error",
+				"never"
+			]
 		}
 	}
 }
