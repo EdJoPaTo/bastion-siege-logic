@@ -13,7 +13,7 @@ import {
 	estimateResourcesAfter
 } from '../source/resources'
 
-import {buildingsOne} from './helpers/buildings'
+import {buildingsOne} from './_buildings'
 
 test('gold capacity', t => {
 	t.is(calcGoldCapacity(1), 500000, 'level 1')

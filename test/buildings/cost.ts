@@ -7,7 +7,7 @@ import {
 	calcMinutesNeededForUpgrade
 } from '../../source/buildings/cost'
 
-import {buildingsOne} from '../helpers/buildings'
+import {buildingsOne} from '../_buildings'
 
 test('townhall', t => {
 	t.deepEqual(calcBuildingCost('townhall', 1), {gold: 1500, wood: 600, stone: 600}, 'level 1')

@@ -2,7 +2,7 @@ import {
 	Buildings,
 	Constructions,
 	Workshop
-} from '../../source/buildings/building-types'
+} from '../source/buildings/building-types'
 
 export const buildingsOne: Buildings = {
 	townhall: 1,

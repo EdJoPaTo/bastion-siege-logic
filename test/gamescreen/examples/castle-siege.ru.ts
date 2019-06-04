@@ -1,6 +1,6 @@
 /* eslint no-irregular-whitespace: 0 */
 
-import {testrunnerMany, Testexample} from './helpers'
+import {testrunnerMany, Testexample} from './_testrunner'
 
 const examples: Testexample[] = [
 	{

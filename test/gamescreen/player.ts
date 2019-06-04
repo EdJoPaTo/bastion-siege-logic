@@ -3,7 +3,7 @@ import test, {ExecutionContext} from 'ava'
 import {EMOJI} from '../../source/gamescreen/emoji'
 import {Player, parsePlayer} from '../../source/gamescreen/player'
 
-import {getEmojiInfo, getUnicode} from './helpers/unicode'
+import {getEmojiInfo, getUnicode} from './_unicode'
 
 function exampleMacro(t: ExecutionContext, text: string, expected: Player): void {
 	t.log(text)

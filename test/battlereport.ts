@@ -1,11 +1,21 @@
 import test from 'ava'
 
 import {
+	Battlereport,
 	sameBattleResourceAssumption,
 	uniqueBattlereportIdentifier
 } from '../source/battlereport'
 
-import {reportBasis} from './helpers/battlereport'
+const reportBasis: Battlereport = {
+	time: 42,
+	attack: true,
+	won: true,
+	friends: [],
+	enemies: [],
+	soldiersAlive: 0,
+	soldiersTotal: 0,
+	gold: 42
+}
 
 test('sameBattleResourceAssumption example', t => {
 	const basis = {

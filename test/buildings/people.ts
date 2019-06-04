@@ -9,7 +9,7 @@ import {
 	calcWallArcherCapacity
 } from '../../source/buildings/people'
 
-import {buildingsOne} from '../helpers/buildings'
+import {buildingsOne} from '../_buildings'
 
 test('houses capacity', t => {
 	t.is(calcHousesCapacity(1), 20, 'level 1')

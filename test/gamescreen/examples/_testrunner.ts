@@ -1,8 +1,14 @@
 import test, {ExecutionContext} from 'ava'
 
-import {parseGamescreenContent} from '../../../../source/gamescreen/gamescreen'
+import {GamescreenContent} from '../../../source/gamescreen/gamescreen-type'
+import {parseGamescreenContent} from '../../../source/gamescreen/gamescreen'
 
-import {Testexample} from './types'
+export interface Testexample {
+	comment?: string;
+	language: string;
+	information: GamescreenContent;
+	text: string;
+}
 
 export function testrunner(t: ExecutionContext, example: Testexample): void {
 	t.log('language', example.language)

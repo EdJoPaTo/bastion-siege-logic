@@ -2,7 +2,7 @@
 
 import {Mystic} from '../../../source/gamescreen/mystics'
 
-import {testrunnerMany, Testexample} from './helpers'
+import {testrunnerMany, Testexample} from './_testrunner'
 
 const examples: Testexample[] = [
 	{
