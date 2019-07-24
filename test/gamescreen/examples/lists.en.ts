@@ -73,7 +73,8 @@ const examples: Testexample[] = [
 				{
 					type: '🔅',
 					name: 'Karl',
-					value: '1600'
+					value: '1600',
+					meta: '3 мин.'
 				}, {
 					type: '👑',
 					name: 'Leader',
@@ -89,7 +90,8 @@ const examples: Testexample[] = [
 				}, {
 					type: '⚜',
 					name: 'Bob',
-					value: '100'
+					value: '100',
+					meta: '3 min.'
 				}
 			]
 		},

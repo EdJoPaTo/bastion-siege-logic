@@ -57,6 +57,7 @@ export interface ListEntry {
 	type: string;
 	name: string;
 	value: string;
+	meta?: string;
 }
 
 export interface GamescreenContent {
