@@ -73,23 +73,23 @@ const examples: Testexample[] = [
 				{
 					type: '🔅',
 					name: 'Karl',
-					value: '1600🛡  3 мин.'
+					value: '1600'
 				}, {
 					type: '👑',
 					name: 'Leader',
-					value: '800🛡'
+					value: '800'
 				}, {
 					type: '🔅',
 					name: 'Long Name Joo~',
-					value: '400🛡'
+					value: '400'
 				}, {
 					type: '🔅',
 					name: 'Peter',
-					value: '200🛡'
+					value: '200'
 				}, {
 					type: '⚜',
 					name: 'Bob',
-					value: '100🛡  3 min.'
+					value: '100'
 				}
 			]
 		},

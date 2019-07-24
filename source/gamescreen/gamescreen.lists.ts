@@ -7,7 +7,7 @@ import {
 import * as contentFilter from './helpers/content-filter'
 
 const LIST_SIMPLE_REGEX = /^(👑|🔅|⚜)(.+)\s+(\S+)$/
-const LIST_ALLIANCE_REGEX = /^(👑|🔅|⚜)(.+)\s+(\d+🛡\s*(?:\d+ .+)?)$/
+const LIST_ALLIANCE_REGEX = /^(👑|🔅|⚜)(.+)\s+(\d+)(?:🛡)\s*(?:\d+ .+)?$/
 
 export function ranking(content: string): GamescreenContent {
 	if (contentFilter.starts(content, EMOJI.gold)) {
