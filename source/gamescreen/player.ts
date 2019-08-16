@@ -13,6 +13,7 @@ export interface Player {
 	achievements?: string;
 }
 
+const nameRegex = createNameRegex()
 function createNameRegex(): RegExp {
 	const e = emojiRegex.source
 	const concatedNamePart = [
@@ -42,7 +43,7 @@ export function parsePlayer(input: string): Player {
 		}
 	}
 
-	const match = createNameRegex().exec(text)
+	const match = nameRegex.exec(text)
 	if (!match) {
 		throw new Error('could not parse player')
 	}
