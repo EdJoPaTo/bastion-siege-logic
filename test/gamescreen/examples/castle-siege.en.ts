@@ -64,6 +64,11 @@ Until the next siege: 5 h.`
 		},
 		text: '⚔️🏰 Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.'
 	}, {
+		information: {
+			type: 'castleSiegeYouJoined'
+		},
+		text: '⚔️🏰 Your alliance successfully joined the siege at the Diamond castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.'
+	}, {
 		information: {castleSiegeAllianceJoined: {
 			alliance: '🌙'
 		}},
