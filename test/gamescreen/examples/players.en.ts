@@ -143,6 +143,9 @@ Users
 🗡Conqueror: [🥚]Hexadecanoуloхy
 
 🏁Days after start   1003`
+	}, {
+		information: {type: 'allianceBattleYourArmyJoined'},
+		text: '🕊⚔Your army joined the attack.'
 	}
 ]
 	.map(o => ({...o, language: 'en'})) as Testexample[]
