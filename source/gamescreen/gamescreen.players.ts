@@ -1,6 +1,7 @@
-import {GamescreenContent} from './gamescreen-type'
-import {parsePlayer} from './player'
 import {EMOJI} from './emoji'
+import {GamescreenContent} from './gamescreen-type'
+import {MYSTICS_TEXT_EN, MYSTICS_TEXT_RU} from './mystics'
+import {parsePlayer} from './player'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
@@ -87,11 +88,39 @@ export function allianceJoinRequest(content: string): GamescreenContent {
 }
 
 export function attackIncoming(content: string): GamescreenContent {
-	if (contentFilter.ends(content, 'Army will be sent to the defense!')) {
+	if (contentFilter.includes(content, 'Your domain attacked! ')) {
+		if (contentFilter.includes(content, MYSTICS_TEXT_EN.dragon)) {
+			return {attackIncoming: {
+				mystic: 'dragon',
+				name: MYSTICS_TEXT_EN.dragon
+			}}
+		}
+
+		if (contentFilter.includes(content, '☠️Undead army')) {
+			return {attackIncoming: {
+				mystic: 'undead',
+				name: MYSTICS_TEXT_EN.undead
+			}}
+		}
+
 		return {attackIncoming: regexHelper.getPlayer(content, /attacked! ([\s\S]+) approaches/)}
 	}
 
 	if (contentFilter.includes(content, 'Твои владения атакованы')) {
+		if (contentFilter.includes(content, '🐲Дракон')) {
+			return {attackIncoming: {
+				mystic: 'dragon',
+				name: MYSTICS_TEXT_RU.dragon
+			}}
+		}
+
+		if (contentFilter.includes(content, 'Армия ☠️Нежити')) {
+			return {attackIncoming: {
+				mystic: 'undead',
+				name: MYSTICS_TEXT_RU.undead
+			}}
+		}
+
 		return {attackIncoming: regexHelper.getPlayer(content, /атакованы! ([\s\S]+) подступает/)}
 	}
 

@@ -116,6 +116,18 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 		}},
 		text: '‼️Your domain attacked! [🐮]Son of Gods approaches the border! Your whole ⚔Army will be sent to the defense!'
 	}, {
+		information: {attackIncoming: {
+			mystic: 'dragon',
+			name: '🐲Dragon'
+		}},
+		text: '‼️Your domain attacked! The 🐲Dragon cuts the sky above our heads! Your army will try to distract him! I hope the ⚔️Ballista is ready?'
+	}, {
+		information: {attackIncoming: {
+			mystic: 'undead',
+			name: '☠Undead army'
+		}},
+		text: '‼️Your domain attacked! The ☠️Undead army is already at the walls! Your army sent to the defence!'
+	}, {
 		information: {allianceJoinRequest: {
 			achievements: undefined,
 			alliance: undefined,
