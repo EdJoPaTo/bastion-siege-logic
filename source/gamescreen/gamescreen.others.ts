@@ -143,3 +143,11 @@ export function getChat(content: string): GamescreenContent {
 
 	return {}
 }
+
+export function dig(content: string): GamescreenContent {
+	if (contentFilter.includes(content, '/dig')) {
+		return {type: 'dig'}
+	}
+
+	return {}
+}

@@ -167,6 +167,17 @@ yeah!`
 📣 Bob: I was here
 
 yeah!`
+	}, {
+		information: {type: 'dig'},
+		text: `⛏ Digging complete fail.
+Dig again: /dig`
+	}, {
+		information: {type: 'dig'},
+		text: `⛏ Digging complete success. You got 1💎.
+Dig again: /dig`
+	}, {
+		information: {type: 'dig'},
+		text: '🤵🏻Don\'t forget to dig the 💎Gems! /dig'
 	}
 ]
 	.map(o => ({...o, language: 'en'}))
