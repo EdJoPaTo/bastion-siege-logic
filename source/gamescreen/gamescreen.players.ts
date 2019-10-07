@@ -126,3 +126,12 @@ export function attackscout(content: string): GamescreenContent {
 
 	return {}
 }
+
+export function serverStatistics(content: string): GamescreenContent {
+	if (!contentFilter.starts(content, EMOJI.serverStatistics)) {
+		return {}
+	}
+
+	const conqueror = regexHelper.getPlayer(content, /\S+: (.+)/)
+	return {conqueror}
+}

@@ -75,6 +75,7 @@ export interface GamescreenContent {
 	castleSiegeParticipants?: CastleSiegeParticipant[];
 	castleSiegePlayerJoined?: Player;
 	chat?: Chat;
+	conqueror?: Player;
 	domainStats?: DomainStats;
 	effects?: Effect[];
 	list?: ListEntry[];

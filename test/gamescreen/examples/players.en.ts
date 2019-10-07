@@ -123,6 +123,26 @@ Simpson in his domain Springfield with 60407🗺 territory. If you win, you'll g
 			name: 'Bob'
 		}},
 		text: 'Bob from Village with the territory of 666🗺 wants to enter your alliance.'
+	}, {
+		information: {
+			conqueror: {
+				achievements: undefined,
+				alliance: '🥚',
+				bonus: undefined,
+				name: 'Hexadecanoуloхy'
+			}
+		},
+		text: `💾Server statistic
+
+Users
+🔅All               50343
+🔅Registered        43189
+🔅With barracks     10408
+🔅Active per day      670
+
+🗡Conqueror: [🥚]Hexadecanoуloхy
+
+🏁Days after start   1003`
 	}
 ]
 	.map(o => ({...o, language: 'en'}))

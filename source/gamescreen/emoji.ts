@@ -10,6 +10,8 @@ export const EMOJI: {[key: string]: string} = {
 	people: '👥',
 	army: '⚔',
 	archer: '🏹',
+	serverStatistics: '💾',
+	conqueror: '🗡',
 	listLeader: '👑',
 	listNormal: '🔅',
 	listYou: '⚜',
