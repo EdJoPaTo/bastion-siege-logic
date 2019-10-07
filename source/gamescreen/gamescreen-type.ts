@@ -1,5 +1,5 @@
 import {BattlereportRaw} from '../battlereport'
-import {Buildings, Workshop} from '../buildings'
+import {Buildings, Workshop, ConstructionName} from '../buildings'
 import {Resources} from '../resources'
 
 import {Player} from './player'
@@ -60,8 +60,27 @@ export interface ListEntry {
 	meta?: string;
 }
 
+export type GamescreenType =
+	ConstructionName |
+	'allianceBattleYourArmyJoined' |
+	'allianceMembers' |
+	'castleSiegePlayerJoined' |
+	'castleSiegeYouJoined' |
+	'dig' |
+	'main' |
+	'nextCastleSiege' |
+	'patrolreport' |
+	'rankingGold' |
+	'rankingKarma' |
+	'rankingSearch' |
+	'rankingTerra' |
+	'rankingWins' |
+	'resources' |
+	'siegeStarted' |
+	'war'
+
 export interface GamescreenContent {
-	type?: string;
+	type?: GamescreenType;
 
 	allianceBattleStart?: AllianceBattleStart;
 	allianceBattleSupport?: Player;

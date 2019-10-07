@@ -4,7 +4,7 @@ import {Mystic} from '../../../source/gamescreen/mystics'
 
 import {testrunnerMany, Testexample} from './_testrunner'
 
-const examples: Testexample[] = [
+const examples = [
 	{
 		information: {battlereport: {
 			won: true,
@@ -133,6 +133,6 @@ const examples: Testexample[] = [
 		text: '‼️Битва с 🐲Драконом окончена. Поздравляю, Heo! Твоя армия одержала победу. Победители 17080⚔️ без единой потери гордо возвращаются домой. Раненный 🐲Дракон стремительно скрывается за горизонтом роняя драгоценности на сумму 138473832💰 и 1💎.'
 	}
 ]
-	.map(o => ({...o, language: 'ru'}))
+	.map(o => ({...o, language: 'ru'})) as Testexample[]
 
 testrunnerMany(examples)

@@ -4,7 +4,7 @@ import {Mystic} from '../../../source/gamescreen/mystics'
 
 import {testrunnerMany, Testexample} from './_testrunner'
 
-const examples: Testexample[] = [
+const examples = [
 	{
 		information: {battlereport: {
 			won: true,
@@ -442,6 +442,6 @@ Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 1
 		text: '‼️The battle with ☠️Undead army complete. Unfortunately, not used name, your army lose. None of the 0⚔️ returned from the battlefield... All food was poisoned, and a part of the population was killed.A new effect is obtained: 💀Plague.'
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'en'})) as Testexample[]
 
 testrunnerMany(examples)

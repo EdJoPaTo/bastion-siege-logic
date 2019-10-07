@@ -2,7 +2,7 @@
 
 import {testrunnerMany, Testexample} from './_testrunner'
 
-const examples: Testexample[] = [
+const examples = [
 	{
 		information: {
 			type: 'rankingWins',
@@ -102,6 +102,6 @@ const examples: Testexample[] = [
 ⚜Bob           100🛡  3 min.`
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'en'})) as Testexample[]
 
 testrunnerMany(examples)

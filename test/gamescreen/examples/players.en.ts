@@ -2,7 +2,7 @@
 
 import {testrunnerMany, Testexample} from './_testrunner'
 
-const examples: Testexample[] = [
+const examples = [
 	{
 		information: {attackscout: {
 			player: {
@@ -145,6 +145,6 @@ Users
 🏁Days after start   1003`
 	}
 ]
-	.map(o => ({...o, language: 'en'}))
+	.map(o => ({...o, language: 'en'})) as Testexample[]
 
 testrunnerMany(examples)
