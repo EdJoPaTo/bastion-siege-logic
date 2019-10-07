@@ -151,3 +151,11 @@ export function dig(content: string): GamescreenContent {
 
 	return {}
 }
+
+export function siegeStarted(content: string): GamescreenContent {
+	if (contentFilter.endsAny(content, 'Siege has started!', 'Осада началась!')) {
+		return {type: 'siegeStarted'}
+	}
+
+	return {}
+}

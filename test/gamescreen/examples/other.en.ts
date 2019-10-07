@@ -178,6 +178,9 @@ Dig again: /dig`
 	}, {
 		information: {type: 'dig'},
 		text: '🤵🏻Don\'t forget to dig the 💎Gems! /dig'
+	}, {
+		information: {type: 'siegeStarted'},
+		text: '⚔Siege has started!'
 	}
 ]
 	.map(o => ({...o, language: 'en'}))
