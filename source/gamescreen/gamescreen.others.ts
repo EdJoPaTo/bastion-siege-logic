@@ -19,12 +19,6 @@ export function effects(content: string): GamescreenContent {
 
 	const lines = content.split('\n')
 
-	if (!EFFECTS_REGEX.test(lines[0])) {
-		// TODO: remove when not reported otherwise
-		console.log('bastion-siege-logic gamescreen effects why am i needed?', content)
-		return {}
-	}
-
 	const effects: Effect[] = lines
 		.map(line => {
 			const effect: Effect = {
