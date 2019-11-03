@@ -5,6 +5,7 @@
 		"test"
 	],
 	"compilerOptions": {
-		"outDir": "dist"
+		"outDir": "dist",
+		"sourceMap": true
 	}
 }
