@@ -10,6 +10,7 @@ const reportBasis: Battlereport = {
 	time: 42,
 	attack: true,
 	won: true,
+	me: '',
 	friends: [],
 	enemies: [],
 	soldiersAlive: 0,

@@ -9,6 +9,7 @@ export interface Battlereport extends BattlereportRaw {
 export interface BattlereportRaw {
 	attack: boolean;
 	won: boolean;
+	me: string;
 	friends: string[];
 	enemies: string[];
 	enemyAlliance?: string;

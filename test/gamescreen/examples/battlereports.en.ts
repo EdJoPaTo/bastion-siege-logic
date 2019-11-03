@@ -16,6 +16,7 @@ const examples = [
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 11436,
 			gold: 64783
@@ -33,6 +34,7 @@ For 11436⚔ of 11436⚔ not found a place in the 🛡Barracks and had to disban
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 9661,
 			soldiersAlive: 6218,
 			gold: 383274
@@ -50,6 +52,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 9661,
 			gold: 2622665
@@ -65,6 +68,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 15000,
 			soldiersAlive: 1,
 			gold: -4400940
@@ -81,6 +85,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 38,
 			soldiersAlive: 0,
 			terra: -102,
@@ -98,6 +103,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 8212,
 			soldiersAlive: 38,
 			terra: -106,
@@ -114,6 +120,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 12000,
 			karma: 2,
@@ -131,6 +138,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 11996,
 			terra: 87,
@@ -148,6 +156,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 11015,
 			soldiersAlive: 11015,
 			terra: 24,
@@ -166,6 +175,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 8092,
 			gold: 1044287
@@ -181,6 +191,7 @@ For 6218⚔ of 6218⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 12000,
 			karma: 2,
@@ -201,6 +212,7 @@ For 460⚔ of 12000⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 0,
 			terra: -140,
@@ -218,6 +230,7 @@ For 460⚔ of 12000⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 0,
 			terra: -150,
@@ -235,6 +248,7 @@ For 460⚔ of 12000⚔ not found a place in the 🛡Barracks and had to disband.
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 45,
 			terra: -111,
@@ -251,6 +265,7 @@ For 45⚔ of 45⚔ not found a place in the 🛡Barracks and had to disband. The
 			enemyAlliance: '🐂',
 			enemies: ['Vlomissimo', 'AUroom', 'Киллер'],
 			friends: ['not used name'],
+			me: 'not used name',
 			soldiersTotal: 10040,
 			soldiersAlive: 2163,
 			gold: 546724
@@ -266,6 +281,7 @@ For 2163⚔ of 2163⚔ not found a place in the 🛡Barracks and had to disband.
 			enemyAlliance: '🐺',
 			enemies: ['Demonhunter'],
 			friends: ['Raphi', 'not used name'],
+			me: 'not used name',
 			soldiersTotal: 10040,
 			soldiersAlive: 1079,
 			gold: 557368
@@ -280,6 +296,7 @@ Losers: Demonhunter`
 			enemyAlliance: '🐺',
 			enemies: ['C'],
 			friends: ['A', 'B'],
+			me: 'not used name',
 			soldiersTotal: 0,
 			soldiersAlive: 0,
 			gold: 557368
@@ -294,6 +311,7 @@ Losers: C`
 			enemyAlliance: '🥖',
 			enemies: ['Батон'],
 			friends: ['A', 'B'],
+			me: 'A',
 			soldiersTotal: 15000,
 			soldiersAlive: 0,
 			gold: 6429697,
@@ -309,6 +327,7 @@ Losers: Батон`
 			attack: true,
 			enemies: ['Z'],
 			friends: ['A', 'B', 'C'],
+			me: 'A',
 			soldiersTotal: 10000,
 			soldiersAlive: 10000,
 			gold: 3170484,
@@ -325,6 +344,7 @@ Losers: Z`
 			enemyAlliance: '🛰',
 			enemies: ['L', 'F', 'G'],
 			friends: ['A', 'B', 'C'],
+			me: 'B',
 			soldiersTotal: 7320,
 			soldiersAlive: 0,
 			gold: -490222,
@@ -339,6 +359,7 @@ Losers: A, B, C`
 			attack: true,
 			enemies: ['Z'],
 			friends: ['A'],
+			me: 'A',
 			soldiersTotal: 10000,
 			soldiersAlive: 10000,
 			gold: 237528,
@@ -353,6 +374,7 @@ Losers: A, B, C`
 			enemyAlliance: '🦅',
 			enemies: ['Z'],
 			friends: ['A'],
+			me: 'A',
 			soldiersTotal: 0,
 			soldiersAlive: 0,
 			gold: -5694326,
@@ -366,6 +388,7 @@ Losers: A, B, C`
 			attack: true,
 			enemies: ['Homer Simpson'],
 			friends: ['Bob'],
+			me: 'Bob',
 			soldiersTotal: 15000,
 			soldiersAlive: 10000,
 			gold: 4767398,
@@ -385,6 +408,7 @@ Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 1
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 14000,
 			soldiersAlive: 14000,
 			gems: 2,
@@ -402,6 +426,7 @@ Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 1
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 0,
 			soldiersAlive: 0,
 			gold: 0
@@ -418,6 +443,7 @@ Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 1
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 12000,
 			soldiersAlive: 4943,
 			gems: 3,
@@ -435,6 +461,7 @@ Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 1
 			friends: [
 				'not used name'
 			],
+			me: 'not used name',
 			soldiersTotal: 0,
 			soldiersAlive: 0,
 			gold: 0

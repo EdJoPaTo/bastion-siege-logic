@@ -219,6 +219,7 @@ function getBattlereportFromRaw(raw: Raw): BattlereportRaw {
 }
 
 interface FriendsEnemies {
+	me: string;
 	friends: string[];
 	enemies: string[];
 }
@@ -227,12 +228,14 @@ function getFriendsEnemies(raw: Raw): FriendsEnemies {
 	if (raw.won) {
 		return {
 			enemies: raw.losers || [raw.enemy],
-			friends: raw.winners || [raw.me]
+			friends: raw.winners || [raw.me],
+			me: raw.me
 		}
 	}
 
 	return {
 		enemies: raw.winners || [raw.enemy],
-		friends: raw.losers || [raw.me]
+		friends: raw.losers || [raw.me],
+		me: raw.me
 	}
 }

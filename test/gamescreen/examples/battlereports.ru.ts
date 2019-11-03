@@ -16,6 +16,7 @@ const examples = [
 			friends: [
 				'Оптимус Лис', 'Лисий Бот', 'Горбачев', 'Лисьи усы', 'smol fox', 'в', 'Лисий твинк', 'Number of the beast', 'Эмульгатор соевый', 'Лисья внезапность', 'Лисий нoсик', 'Andrey Brasco', 'Глютен'
 			],
+			me: 'Лисий твинк',
 			soldiersTotal: 26000,
 			soldiersAlive: 20019,
 			terra: 205117,
@@ -35,6 +36,7 @@ const examples = [
 			friends: [
 				'Heo', 'Пифия', 'Агент Смит', 'Оракул', 'Меровинген', 'Тринити'
 			],
+			me: 'Агент Смит',
 			soldiersTotal: 842,
 			soldiersAlive: 0,
 			terra: 64,
@@ -55,6 +57,7 @@ const examples = [
 			friends: [
 				'A', 'B', 'C'
 			],
+			me: 'B',
 			soldiersTotal: 1880,
 			soldiersAlive: 0,
 			gold: -5746
@@ -73,6 +76,7 @@ const examples = [
 			friends: [
 				'в'
 			],
+			me: 'в',
 			soldiersTotal: 13567,
 			soldiersAlive: 0,
 			terra: -12672,
@@ -90,6 +94,7 @@ const examples = [
 			friends: [
 				'в'
 			],
+			me: 'в',
 			soldiersTotal: 10780,
 			soldiersAlive: 10780,
 			terra: 48,
@@ -108,6 +113,7 @@ const examples = [
 			friends: [
 				'Heo'
 			],
+			me: 'Heo',
 			soldiersTotal: 17240,
 			soldiersAlive: 7012,
 			gems: 2,
@@ -125,6 +131,7 @@ const examples = [
 			friends: [
 				'Heo'
 			],
+			me: 'Heo',
 			soldiersTotal: 17080,
 			soldiersAlive: 17080,
 			gems: 1,
