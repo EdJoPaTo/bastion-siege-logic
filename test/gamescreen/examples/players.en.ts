@@ -158,6 +158,20 @@ Users
 	}, {
 		information: {type: 'allianceBattleYourArmyJoined'},
 		text: '🕊⚔Your army joined the attack.'
+	}, {
+		information: {
+			type: 'personalAllianceOverview',
+			allianceLeader: {
+				achievements: '⛏',
+				alliance: '🔲',
+				bonus: undefined,
+				name: 'DRK'
+			}
+		},
+		text: `Welcome to the alliance [🔲​]DRK_EKE!
+Alliance tag: DRE
+Alliance leader: {⛏}[🔲]DRK
+Number of members: 16`
 	}
 ]
 	.map(o => ({...o, language: 'en'})) as Testexample[]

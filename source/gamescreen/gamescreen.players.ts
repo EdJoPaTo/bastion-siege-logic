@@ -163,3 +163,17 @@ export function serverStatistics(content: string): GamescreenContent {
 	const conqueror = regexHelper.getPlayer(content, /\S+: (.+)/)
 	return {conqueror}
 }
+
+export function personalAllianceOverview(content: string): GamescreenContent {
+	const isEnglish = contentFilter.starts(content, 'Welcome to the alliance ')
+	const isRussian = contentFilter.starts(content, 'Добро пожаловать в альянс ')
+	if (!isEnglish && !isRussian) {
+		return {}
+	}
+
+	const allianceLeader = regexHelper.getPlayer(content, isEnglish ? /Alliance leader: (.+)/ : /Лидер альянса: (.+)/)
+	return {
+		type: 'personalAllianceOverview',
+		allianceLeader
+	}
+}

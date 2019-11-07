@@ -70,6 +70,7 @@ export type GamescreenType =
 	'main' |
 	'nextCastleSiege' |
 	'patrolreport' |
+	'personalAllianceOverview' |
 	'rankingGold' |
 	'rankingKarma' |
 	'rankingSearch' |
@@ -85,6 +86,7 @@ export interface GamescreenContent {
 	allianceBattleStart?: AllianceBattleStart;
 	allianceBattleSupport?: Player;
 	allianceJoinRequest?: Player;
+	allianceLeader?: Player;
 	attackIncoming?: Player;
 	attackscout?: Attackscout;
 	battle?: BattleAlliance | BattleSolo;
