@@ -25,6 +25,11 @@ For 7050⚔ of 7050⚔ not found a place in the 🛡Barracks and had to disband.
 For 1166⚔ of 1166⚔ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.`
 	}, {
 		information: {
+			type: 'patrolreport'
+		},
+		text: '⚔ Nobody returned from patrol. No one knows what happened. No news or rumors.'
+	}, {
+		information: {
 			type: 'war',
 			domainStats: {
 				wins: 4817,

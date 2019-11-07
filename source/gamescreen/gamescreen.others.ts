@@ -116,6 +116,7 @@ export function getPatrolreport(content: string): GamescreenContent {
 		'⚔ Завязалась кровавая битва',
 		'⚔ Битва оказалась не долгой и легкой',
 		'⚔ Разразилась нешуточная битва. Всю ночь были слышны крики и скрежет метала. ',
+		'⚔ Nobody returned from patrol.',
 		'⚔ The battle was all night',
 		'⚔ The battle was easy and you won. However, the bandits started a fire.'
 	)) {
