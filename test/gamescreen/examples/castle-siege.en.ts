@@ -62,6 +62,11 @@ Until the next siege: 5 h.`
 		information: {
 			type: 'castleSiegeYouJoined'
 		},
+		text: '⚔️🏰 Your army went to resist the siege on Ruby castle.'
+	}, {
+		information: {
+			type: 'castleSiegeYouJoined'
+		},
 		text: '⚔️🏰 Your alliance successfully joined the siege of the castle. Your whole army is sent to its walls. All members of your alliance are notified of the siege.'
 	}, {
 		information: {
