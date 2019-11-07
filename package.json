@@ -32,13 +32,13 @@
 		"emoji-tree": "^1.1.2"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^0.5.0",
+		"@sindresorhus/tsconfig": "^0.6.0",
 		"@types/node": "^12.0.4",
 		"@typescript-eslint/eslint-plugin": "^2.3.2",
 		"@typescript-eslint/parser": "^2.3.2",
 		"ava": "^2.0.0",
 		"del-cli": "^3.0.0",
-		"eslint-config-xo-typescript": "^0.19.0",
+		"eslint-config-xo-typescript": "^0.21.0",
 		"nyc": "^14.0.0",
 		"typescript": "^3.4.2",
 		"xo": "^0.25.3"
@@ -71,7 +71,6 @@
 		],
 		"rules": {
 			"import/named": "warn",
-			"@typescript-eslint/strict-boolean-expressions": "off",
 			"ava/no-ignored-test-files": "off",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
