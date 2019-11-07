@@ -114,6 +114,8 @@ function getWarBattle(content: string, warRegexps: WarRegex): BattleAlliance | B
 export function getPatrolreport(content: string): GamescreenContent {
 	if (contentFilter.startsAny(content,
 		'⚔ Завязалась кровавая битва',
+		'⚔ Битва оказалась не долгой и легкой',
+		'⚔ Разразилась нешуточная битва. Всю ночь были слышны крики и скрежет метала. ',
 		'⚔ The battle was all night',
 		'⚔ The battle was easy and you won. However, the bandits started a fire.'
 	)) {
