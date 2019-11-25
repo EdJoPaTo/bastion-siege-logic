@@ -1,11 +1,9 @@
-type Dict<T> = {[key: string]: T}
-
-interface LangDict {
+interface LangEntry {
 	en: string;
 	ru: string;
 }
 
-export const GAMETEXT: Dict<LangDict> = {
+export const GAMETEXT: Record<string, LangEntry> = {
 	townhall: {
 		en: 'Town hall',
 		ru: 'Ратуша'
