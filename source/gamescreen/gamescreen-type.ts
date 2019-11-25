@@ -65,6 +65,7 @@ export type GamescreenType =
 	ConstructionName |
 	'allianceBattleYourArmyJoined' |
 	'allianceMembers' |
+	'castleSiegeAvailable' |
 	'castleSiegePlayerJoined' |
 	'castleSiegeStarts' |
 	'castleSiegeYouJoined' |

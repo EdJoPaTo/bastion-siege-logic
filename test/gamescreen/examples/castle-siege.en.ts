@@ -22,6 +22,18 @@ Sapphire castle
 Until the next siege: 5 h.`
 	}, {
 		information: {
+			castle: 'ruby',
+			type: 'castleSiegeAvailable'
+		},
+		text: '⚔️🏰 The siege is available on Ruby castle. Leaders of alliances can attack.'
+	}, {
+		information: {
+			castle: 'ruby',
+			type: 'castleSiegeAvailable'
+		},
+		text: '⚔️🏰 Preparation begins for the siege on Ruby castle. Hurry to go in defense of the castle!'
+	}, {
+		information: {
 			castle: 'sapphire',
 			type: 'castleSiegeStarts'
 		},

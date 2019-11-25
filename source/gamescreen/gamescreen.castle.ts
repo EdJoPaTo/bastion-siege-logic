@@ -9,6 +9,27 @@ import * as regexHelper from './helpers/regex'
 
 const JOIN_BEGIN_EMOJIS = EMOJI.attack + EMOJI.castle + ' '
 
+export function siegeAvailable(input: string): GamescreenContent {
+	const content = inputTextCleanup(input)
+	if (!contentFilter.startsAny(content,
+		JOIN_BEGIN_EMOJIS + 'The siege is available on ',
+		JOIN_BEGIN_EMOJIS + 'Preparation begins for the siege on ',
+		JOIN_BEGIN_EMOJIS + 'Доступна осада на '
+	)) {
+		return {}
+	}
+
+	const info = determineCastle(content)
+	if (!info) {
+		throw new Error('failed to parse siege available')
+	}
+
+	return {
+		castle: info.castle,
+		type: 'castleSiegeAvailable'
+	}
+}
+
 export function siegeStarts(input: string): GamescreenContent {
 	const content = inputTextCleanup(input)
 	if (!contentFilter.startsAny(content,

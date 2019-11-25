@@ -5,6 +5,12 @@ import {testrunnerMany, Testexample} from './_testrunner'
 const examples = [
 	{
 		information: {
+			castle: 'diamond',
+			type: 'castleSiegeAvailable'
+		},
+		text: '⚔️🏰 Доступна осада на Бриллиантовый замок. Лидеры альянсов могут выступить в атаку.'
+	}, {
+		information: {
 			castle: 'sapphire',
 			type: 'castleSiegeStarts'
 		},
