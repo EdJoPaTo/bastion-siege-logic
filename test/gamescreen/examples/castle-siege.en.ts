@@ -160,6 +160,60 @@ Until the next siege: 5 h.`
 [🧨​]DRG
 [😇​]Angel Of Death (1)
  - 👑hamakedarayanai`
+	}, {
+		information: {
+			castle: 'ruby',
+			castleSiegeEnds: {
+				oldAlliance: '🦊',
+				newAlliance: '🚀'
+			}
+		},
+		text: '⚔️🏰 Siege on Ruby castle is over!\nThe siege was successful. [🦊​]Лисы loses castle. Ruby castle passes to [🚀​]TONNA.'
+	}, {
+		information: {
+			castle: 'ruby',
+			castleSiegeEnds: {
+				oldAlliance: undefined,
+				newAlliance: '🏕'
+			}
+		},
+		text: '⚔️🏰 Siege on Ruby castle is over!\nUnfortunately, your alliance was unable to withstand the siege and was losing the castle. Ruby castle passes to [🏕​]Гринвуд.\nNone of the 19960⚔️ returned from the battlefield, but we will remember them...'
+	}, {
+		information: {
+			castle: 'sapphire',
+			castleSiegeEnds: {
+				oldAlliance: undefined,
+				newAlliance: undefined
+			}
+		},
+		text: '⚔️🏰 Siege on Sapphire castle is over!\nCongratulations! The siege was successful and your alliance took Sapphire castle!\nFrom the battlefield returned 13902⚔️ of 17440⚔️.\nFor 13902⚔ of 13902⚔ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.\n13902⚔ of the 13902⚔ dismissed soldiers did not find myself dwelling places in your domain.'
+	}, {
+		information: {
+			castle: 'sapphire',
+			castleSiegeEnds: {
+				oldAlliance: undefined,
+				newAlliance: '🌶'
+			}
+		},
+		text: '⚔️🏰 Siege on Sapphire castle is over!\nThe siege was successful, but, unfortunately, your alliance could not occupy the castle. Sapphire castle passes to [🌶​]Red Hot Peppers.\nFrom the battlefield returned 17520⚔️ of 24000⚔️.'
+	}, {
+		information: {
+			castle: 'ruby',
+			castleSiegeEnds: {
+				oldAlliance: '🦊',
+				newAlliance: '🦊'
+			}
+		},
+		text: '⚔️🏰 Siege on Ruby castle is over!\nThe attacking side could not repulse the lock. Ruby castle remains for [🦊​]Лисы.'
+	}, {
+		information: {
+			castle: 'diamond',
+			castleSiegeEnds: {
+				oldAlliance: undefined,
+				newAlliance: undefined
+			}
+		},
+		text: '⚔️🏰 Siege on Diamond castle is over!\nCongratulations! Your alliance successfully repulsed the attack! Diamond castle yours.\nNone of the 52000⚔️ returned from the battlefield, but we will remember them...'
 	}
 ]
 	.map(o => ({...o, language: 'en'})) as Testexample[]

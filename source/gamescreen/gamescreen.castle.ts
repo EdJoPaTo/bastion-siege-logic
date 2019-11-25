@@ -53,6 +53,80 @@ export function siegeStarts(input: string): GamescreenContent {
 	}
 }
 
+export function siegeEnds(input: string): GamescreenContent {
+	const content = inputTextCleanup(input)
+	if (!contentFilter.startsAny(content,
+		JOIN_BEGIN_EMOJIS + 'Siege on ',
+		JOIN_BEGIN_EMOJIS + 'Осада на '
+	) || !contentFilter.includesAny(content,
+		' castle is over!',
+		' замок окончена!'
+	)) {
+		return {}
+	}
+
+	const info = determineCastle(content)
+	if (!info) {
+		throw new Error('failed to parse castle siege end')
+	}
+
+	if (contentFilter.includes(content, 'remains')) {
+		const {alliance} = regexHelper.getPlayer(content, /remains for (.+)./)
+		if (!alliance) {
+			throw new Error('failed to parse castle siege end')
+		}
+
+		return {
+			castle: info.castle,
+			castleSiegeEnds: {
+				oldAlliance: alliance,
+				newAlliance: alliance
+			}
+		}
+	}
+
+	if (contentFilter.includesAny(content,
+		'your alliance took ',
+		'твой альянс занял ',
+		'repulsed'
+	)) {
+		return {
+			castle: info.castle,
+			castleSiegeEnds: {
+				oldAlliance: undefined,
+				newAlliance: undefined
+			}
+		}
+	}
+
+	let oldAlliance: string | undefined
+	if (contentFilter.includesAny(content, ' loses castle.', ' лес теряет замок.')) {
+		const {alliance} = regexHelper.getPlayer(content, info.lang === 'en' ?
+			/\. ([^.]+) loses castle\./ :
+			/\. ([^.]+) лес теряет замок\./)
+		if (!alliance) {
+			throw new Error('failed to parse castle siege end')
+		}
+
+		oldAlliance = alliance
+	}
+
+	const {alliance: newAlliance} = regexHelper.getPlayer(content, info.lang === 'en' ?
+		/ castle passes to ([^.]+)\./ :
+		/ замок переходит(?: к)? ([^.]+)\./)
+	if (!newAlliance) {
+		throw new Error('failed to parse castle siege end')
+	}
+
+	return {
+		castle: info.castle,
+		castleSiegeEnds: {
+			oldAlliance,
+			newAlliance
+		}
+	}
+}
+
 export function joined(input: string): GamescreenContent {
 	const content = inputTextCleanup(input)
 	const info = determineCastle(content)

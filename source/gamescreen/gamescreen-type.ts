@@ -36,6 +36,11 @@ export interface CastleSiegeParticipant {
 	players: string[];
 }
 
+export interface CastleSiegeEnds {
+	oldAlliance?: string;
+	newAlliance?: string;
+}
+
 export interface Chat {
 	sender: string;
 	text: string;
@@ -98,6 +103,7 @@ export interface GamescreenContent {
 	buildings?: Buildings;
 	castle?: Castle;
 	castleSiegeAllianceJoined?: CastleSiegeAllianceJoined;
+	castleSiegeEnds?: CastleSiegeEnds;
 	castleSiegeParticipants?: CastleSiegeParticipant[];
 	castleSiegePlayerJoined?: Player;
 	chat?: Chat;
