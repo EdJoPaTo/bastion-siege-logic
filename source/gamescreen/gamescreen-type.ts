@@ -66,6 +66,7 @@ export type GamescreenType =
 	'allianceBattleYourArmyJoined' |
 	'allianceMembers' |
 	'castleSiegePlayerJoined' |
+	'castleSiegeStarts' |
 	'castleSiegeYouJoined' |
 	'dig' |
 	'main' |

@@ -4,6 +4,12 @@ import {testrunnerMany, Testexample} from './_testrunner'
 
 const examples = [
 	{
+		information: {
+			castle: 'sapphire',
+			type: 'castleSiegeStarts'
+		},
+		text: '⚔️🏰 Осада на Сапфировый замок началась!'
+	}, {
 		type: 'castleSiegePlayerJoined',
 		information: {
 			castle: 'sapphire',

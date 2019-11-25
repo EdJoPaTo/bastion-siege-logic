@@ -23,6 +23,12 @@ Until the next siege: 5 h.`
 	}, {
 		information: {
 			castle: 'sapphire',
+			type: 'castleSiegeStarts'
+		},
+		text: '⚔️🏰 Siege on Sapphire castle began!'
+	}, {
+		information: {
+			castle: 'sapphire',
 			castleSiegePlayerJoined: {
 				achievements: undefined,
 				alliance: '🌶',
