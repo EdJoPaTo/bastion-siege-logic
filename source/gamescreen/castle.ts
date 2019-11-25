@@ -2,6 +2,18 @@ import {Castle} from '../castle'
 
 import {GAMETEXT} from './gametext'
 
+export function castleGametext(castle: Castle, language: 'en' | 'ru'): string {
+	if (castle === 'diamond') {
+		return GAMETEXT.castleDiamond[language]
+	}
+
+	if (castle === 'ruby') {
+		return GAMETEXT.castleRuby[language]
+	}
+
+	return GAMETEXT.castleSapphire[language]
+}
+
 export function determineCastle(content: string): {castle: Castle; lang: 'en' | 'ru'} | undefined {
 	if (content.includes(GAMETEXT.castleDiamond.en)) {
 		return {castle: 'diamond', lang: 'en'}

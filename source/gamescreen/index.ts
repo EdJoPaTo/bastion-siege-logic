@@ -1,3 +1,4 @@
+export * from './castle'
 export * from './emoji'
 export * from './gamescreen-type'
 export * from './gamescreen'
