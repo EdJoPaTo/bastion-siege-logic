@@ -159,6 +159,14 @@ const examples = [
 			name: 'spetsialnyi'
 		}},
 		text: '[🏅]spetsialnyi уже ведет бой с кем-то. Законы чести этих земель не позволяют нам вмешаться.'
+	}, {
+		information: {notRecoveredFromFight: {
+			achievements: undefined,
+			alliance: '🌶',
+			bonus: undefined,
+			name: 'Vanderlog'
+		}},
+		text: '[🌶]Vanderlog еще не оправился от предыдущей битвы. Напасть на него сейчас будет совсем не по чести.'
 	}
 ]
 	.map(o => ({...o, language: 'ru'})) as Testexample[]

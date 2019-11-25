@@ -193,3 +193,19 @@ export function alreadyInFight(content: string): GamescreenContent {
 
 	return {}
 }
+
+export function netRecoveredFromFight(content: string): GamescreenContent {
+	if (contentFilter.ends(content, ' has not yet recovered from the last battle. You can not attack him.')) {
+		return {
+			notRecoveredFromFight: regexHelper.getPlayer(content, /(.+) has not yet/)
+		}
+	}
+
+	if (contentFilter.ends(content, ' еще не оправился от предыдущей битвы. Напасть на него сейчас будет совсем не по чести.')) {
+		return {
+			notRecoveredFromFight: regexHelper.getPlayer(content, /(.+) еще не оправился/)
+		}
+	}
+
+	return {}
+}

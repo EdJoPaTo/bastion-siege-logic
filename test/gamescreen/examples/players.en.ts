@@ -180,6 +180,14 @@ Number of members: 16`
 			name: 'Areta'
 		}},
 		text: '[🐄]Areta is already in a fight with someone. You can not interfere.'
+	}, {
+		information: {notRecoveredFromFight: {
+			achievements: undefined,
+			alliance: undefined,
+			bonus: undefined,
+			name: 'Феня'
+		}},
+		text: 'Феня has not yet recovered from the last battle. You can not attack him.'
 	}
 ]
 	.map(o => ({...o, language: 'en'})) as Testexample[]

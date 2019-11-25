@@ -101,6 +101,7 @@ export interface GamescreenContent {
 	domainStats?: DomainStats;
 	effects?: Effect[];
 	list?: ListEntry[];
+	notRecoveredFromFight?: Player;
 	player?: Player;
 	resources?: Resources;
 	workshop?: Workshop;
