@@ -47,5 +47,17 @@ export const GAMETEXT: Record<string, LangEntry> = {
 	nextCastleSiege: {
 		en: 'Castles',
 		ru: 'Замки'
+	},
+	castleDiamond: {
+		en: 'Diamond',
+		ru: 'Бриллиантовый'
+	},
+	castleRuby: {
+		en: 'Ruby',
+		ru: 'Рубиновый'
+	},
+	castleSapphire: {
+		en: 'Sapphire',
+		ru: 'Сапфировый'
 	}
 }

@@ -1,5 +1,6 @@
 import {BattlereportRaw} from '../battlereport'
 import {Buildings, Workshop, ConstructionName} from '../buildings'
+import {Castle} from '../castle'
 import {Resources} from '../resources'
 
 import {Player} from './player'
@@ -93,6 +94,7 @@ export interface GamescreenContent {
 	battle?: BattleAlliance | BattleSolo;
 	battlereport?: BattlereportRaw;
 	buildings?: Buildings;
+	castle?: Castle;
 	castleSiegeAllianceJoined?: CastleSiegeAllianceJoined;
 	castleSiegeParticipants?: CastleSiegeParticipant[];
 	castleSiegePlayerJoined?: Player;
