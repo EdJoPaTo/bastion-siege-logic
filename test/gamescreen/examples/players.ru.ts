@@ -151,6 +151,14 @@ const examples = [
 Количество участников: 20
 
 НЕ ПОДКЛЮЧАЕМСЯ К АТАКАМ НА АЛЬЯНС НОВОРОССИЯ!!!`
+	}, {
+		information: {alreadyInFight: {
+			achievements: undefined,
+			alliance: '🏅',
+			bonus: undefined,
+			name: 'spetsialnyi'
+		}},
+		text: '[🏅]spetsialnyi уже ведет бой с кем-то. Законы чести этих земель не позволяют нам вмешаться.'
 	}
 ]
 	.map(o => ({...o, language: 'ru'})) as Testexample[]

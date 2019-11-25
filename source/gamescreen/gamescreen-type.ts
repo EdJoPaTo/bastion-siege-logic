@@ -87,6 +87,7 @@ export interface GamescreenContent {
 	allianceBattleSupport?: Player;
 	allianceJoinRequest?: Player;
 	allianceLeader?: Player;
+	alreadyInFight?: Player;
 	attackIncoming?: Player;
 	attackscout?: Attackscout;
 	battle?: BattleAlliance | BattleSolo;

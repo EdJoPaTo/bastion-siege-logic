@@ -172,6 +172,14 @@ Users
 Alliance tag: DRE
 Alliance leader: {⛏}[🔲]DRK
 Number of members: 16`
+	}, {
+		information: {alreadyInFight: {
+			achievements: undefined,
+			alliance: '🐄',
+			bonus: undefined,
+			name: 'Areta'
+		}},
+		text: '[🐄]Areta is already in a fight with someone. You can not interfere.'
 	}
 ]
 	.map(o => ({...o, language: 'en'})) as Testexample[]

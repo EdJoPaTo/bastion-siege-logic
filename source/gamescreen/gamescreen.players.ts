@@ -177,3 +177,19 @@ export function personalAllianceOverview(content: string): GamescreenContent {
 		allianceLeader
 	}
 }
+
+export function alreadyInFight(content: string): GamescreenContent {
+	if (contentFilter.ends(content, ' is already in a fight with someone. You can not interfere.')) {
+		return {
+			alreadyInFight: regexHelper.getPlayer(content, /(.+) is already in a fight/)
+		}
+	}
+
+	if (contentFilter.ends(content, ' уже ведет бой с кем-то. Законы чести этих земель не позволяют нам вмешаться.')) {
+		return {
+			alreadyInFight: regexHelper.getPlayer(content, /(.+) уже ведет бой/)
+		}
+	}
+
+	return {}
+}
