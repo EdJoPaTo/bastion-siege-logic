@@ -100,10 +100,12 @@ export function siegeEnds(input: string): GamescreenContent {
 	}
 
 	let oldAlliance: string | undefined
-	if (contentFilter.includesAny(content, ' loses castle.', ' лес теряет замок.')) {
+	if (contentFilter.includesAny(content, ' loses castle.', ' теряет замок.') &&
+		!contentFilter.includes(content, ' альянс не смог выдержать осаду ')
+	) {
 		const {alliance} = regexHelper.getPlayer(content, info.lang === 'en' ?
 			/\. ([^.]+) loses castle\./ :
-			/\. ([^.]+) лес теряет замок\./)
+			/\. ([^.]+) теряет замок\./)
 		if (!alliance) {
 			throw new Error('failed to parse castle siege end')
 		}
