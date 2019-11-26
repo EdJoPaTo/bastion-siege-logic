@@ -141,7 +141,7 @@ export function joined(input: string): GamescreenContent {
 	)) {
 		return {
 			type: 'castleSiegeYouJoined',
-			castle: info && info.castle
+			castle: info?.castle
 		}
 	}
 

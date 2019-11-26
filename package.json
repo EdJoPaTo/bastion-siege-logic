@@ -38,9 +38,9 @@
 		"@typescript-eslint/parser": "^2.9.0",
 		"ava": "^2.0.0",
 		"del-cli": "^3.0.0",
-		"eslint-config-xo-typescript": "^0.22.0",
+		"eslint-config-xo-typescript": "^0.23.0",
 		"nyc": "^14.0.0",
-		"typescript": "^3.4.2",
+		"typescript": "^3.7.2",
 		"xo": "^0.25.3"
 	},
 	"ava": {
@@ -72,6 +72,7 @@
 		"rules": {
 			"import/named": "warn",
 			"ava/no-ignored-test-files": "off",
+			"@typescript-eslint/prefer-nullish-coalescing": "warn",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
 				{
