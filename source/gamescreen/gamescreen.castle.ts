@@ -14,7 +14,8 @@ export function siegeAvailable(input: string): GamescreenContent {
 	if (!contentFilter.startsAny(content,
 		JOIN_BEGIN_EMOJIS + 'The siege is available on ',
 		JOIN_BEGIN_EMOJIS + 'Preparation begins for the siege on ',
-		JOIN_BEGIN_EMOJIS + 'Доступна осада на '
+		JOIN_BEGIN_EMOJIS + 'Доступна осада на ',
+		JOIN_BEGIN_EMOJIS + 'Начинается подготовка к осаде на '
 	)) {
 		return {}
 	}
