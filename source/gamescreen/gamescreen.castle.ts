@@ -140,7 +140,8 @@ export function joined(input: string): GamescreenContent {
 		JOIN_BEGIN_EMOJIS + 'Your army joined the siege on',
 		JOIN_BEGIN_EMOJIS + 'Your army went to resist the siege on ',
 		JOIN_BEGIN_EMOJIS + 'Your alliance successfully joined the siege ',
-		JOIN_BEGIN_EMOJIS + 'Твой альянс успешно присоединился к осаде замка. Вся твоя армия отправлена к его стенам. Всем участникам твоего альянса отправлены уведомления о вступлении в осаду.'
+		JOIN_BEGIN_EMOJIS + 'Твой альянс успешно присоединился к осаде замка. Вся твоя армия отправлена к его стенам. Всем участникам твоего альянса отправлены уведомления о вступлении в осаду.',
+		JOIN_BEGIN_EMOJIS + 'Твой альянс успешно присоединился к осаде на Сапфировый замок. Вся твоя армия отправлена к его стенам. Всем участникам твоего альянса отправлены уведомления о вступлении в осаду.'
 	)) {
 		return {
 			type: 'castleSiegeYouJoined',
