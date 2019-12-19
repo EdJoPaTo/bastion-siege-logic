@@ -72,7 +72,6 @@
 		"rules": {
 			"import/named": "warn",
 			"ava/no-ignored-test-files": "off",
-			"@typescript-eslint/prefer-nullish-coalescing": "warn",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
 				{

@@ -82,9 +82,9 @@ export function war(content: string): GamescreenContent {
 
 function getWarMenuDomainStats(content: string): DomainStats {
 	return {
-		karma: regexHelper.getOptionalNumber(content, `(-?\\d+)${EMOJI.karma}`) || 0,
-		terra: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.terra}`) || 0,
-		wins: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.wins}`) || 0
+		karma: regexHelper.getOptionalNumber(content, `(-?\\d+)${EMOJI.karma}`) ?? 0,
+		terra: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.terra}`) ?? 0,
+		wins: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.wins}`) ?? 0
 	}
 }
 

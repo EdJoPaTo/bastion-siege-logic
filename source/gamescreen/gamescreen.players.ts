@@ -132,7 +132,7 @@ export function attackscout(content: string): GamescreenContent {
 	const isRussian = contentFilter.starts(content, 'Разведчики докладывают')
 
 	if (isEnglish || isRussian) {
-		const karma = regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.karma}`) || 0
+		const karma = regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.karma}`) ?? 0
 		const terra = regexHelper.getNumberStrict(content, `(\\d+)${EMOJI.terra}`)
 
 		if (isEnglish) {

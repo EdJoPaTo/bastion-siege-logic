@@ -56,9 +56,9 @@ export function battlereport(content: string): GamescreenContent {
 
 function getBattlereportBasicRaw(content: string): BasicRaw {
 	const raw: BasicRaw = {
-		gold: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.gold}`) || 0,
+		gold: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.gold}`) ?? 0,
 		gems: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.gem}`),
-		terra: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.terra}`) || 0,
+		terra: regexHelper.getOptionalNumber(content, `(\\d+)${EMOJI.terra}`) ?? 0,
 		karma: regexHelper.getOptionalNumber(content, `(-?\\d+)${EMOJI.karma}`)
 	}
 
@@ -199,7 +199,7 @@ function getBattlereportFromRaw(raw: Raw): BattlereportRaw {
 
 	if (battlereport.attack && battlereport.won) {
 		// Won attacks against 0 karma targets grant 0 karma
-		battlereport.karma = raw.karma || 0
+		battlereport.karma = raw.karma ?? 0
 	} else if (raw.karma) {
 		// While having negative karma -> losses grant karma
 		battlereport.karma = raw.karma
@@ -227,15 +227,15 @@ interface FriendsEnemies {
 function getFriendsEnemies(raw: Raw): FriendsEnemies {
 	if (raw.won) {
 		return {
-			enemies: raw.losers || [raw.enemy],
-			friends: raw.winners || [raw.me],
+			enemies: raw.losers ?? [raw.enemy],
+			friends: raw.winners ?? [raw.me],
 			me: raw.me
 		}
 	}
 
 	return {
-		enemies: raw.winners || [raw.enemy],
-		friends: raw.losers || [raw.me],
+		enemies: raw.winners ?? [raw.enemy],
+		friends: raw.losers ?? [raw.me],
 		me: raw.me
 	}
 }
