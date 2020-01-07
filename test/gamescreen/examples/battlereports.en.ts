@@ -399,6 +399,31 @@ Losers: A, B, C`
 Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 15000⚔ proudly return home. Your reward is 4767398💰, and 3020🗺 joined to your domain. Your karma has been modified by 3☯.`
 	}, {
 		information: {battlereport: {
+			won: false,
+			attack: false,
+			enemies: ['d\no\nr\ni\nа\nn\ng\nr\ne\nv', 'Янукович', 'Спoнсор', 'Akabur', 'The King Lich', 'Elizаbeth Pratt'],
+			friends: ['Hexadecanoylохy', 'Hexadecanoylоxу'],
+			enemyAlliance: '🦅',
+			me: 'Hexadecanoylохy',
+			soldiersTotal: 3000,
+			soldiersAlive: 0,
+			gold: -92697357,
+			terra: -439
+		}},
+		text: `‼️The battle with alliance [🦅​]Легион complete. Unfortunately, Hexadecanoylохy, your alliance lose. None of the 3000⚔ returned from the battlefield... You lose 92697357💰, and 439🗺 joined to [🦅​]Легион.
+Winners: d
+o
+r
+i
+а
+n
+g
+r
+e
+v, Янукович, Спoнсор, Akabur, The King Lich, Elizаbeth Pratt
+Losers: Hexadecanoylохy, Hexadecanoylоxу`
+	}, {
+		information: {battlereport: {
 			won: true,
 			attack: false,
 			enemyMystic: 'dragon' as Mystic,

@@ -76,7 +76,7 @@ function rawContentFromRussian(content: string): Raw {
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /Битва с (?:альянсом )?([\s\S]+) окончена/)
 
-	const winnersLosers = getWinnersLosersFromAllianceAttack(content, /Победители: (.+)/, /Проигравшие: (.+)/)
+	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Победители', 'Проигравшие', 'Для')
 
 	const soldiers = getSoldiers(content, {
 		normal: `(\\d+)${REGEX_ARMY} из (\\d+)${REGEX_ARMY}`,
@@ -106,7 +106,7 @@ function rawContentFromEnglish(content: string): Raw {
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /battle with (?:alliance )?([\s\S]+) complete/)
 
-	const winnersLosers = getWinnersLosersFromAllianceAttack(content, /Winners: (.+)/, /Losers: (.+)/)
+	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Winners', 'Losers', 'For')
 
 	const soldiers = getSoldiers(content, {
 		normal: `(\\d+)${REGEX_ARMY} of (\\d+)${REGEX_ARMY}`,
@@ -126,17 +126,26 @@ function rawContentFromEnglish(content: string): Raw {
 	}
 }
 
-function getWinnersLosersFromAllianceAttack(content: string, winnersRegex: RegExp, losersRegex: RegExp): WinnersLosers {
-	const winners = regexHelper.getOptional(content, winnersRegex)
-	const losers = regexHelper.getOptional(content, losersRegex)
-
-	if (!winners || !losers) {
+function getWinnersLosersFromAllianceAttack(content: string, winnersString: string, losersString: string, losersAbortString: string): WinnersLosers {
+	if (!contentFilter.includesAll(content, winnersString, losersString)) {
 		return {}
 	}
 
+	const winnersStartIndex = content.indexOf(winnersString + ': ')
+	const losersStartIndex = content.indexOf(losersString + ': ')
+	const loserAbortIndex = content.includes(losersAbortString) ? content.indexOf(losersAbortString) : content.length + 1
+
+	const winnersSubstring = content.slice(winnersStartIndex + winnersString.length + 2, losersStartIndex - 1)
+	const winners = winnersSubstring.split(', ')
+		.map(o => o.trim())
+
+	const losersSubstring = content.slice(losersStartIndex + losersString.length + 2, loserAbortIndex - 1)
+	const losers = losersSubstring.split(', ')
+		.map(o => o.trim())
+
 	return {
-		winners: winners.split(', '),
-		losers: losers.split(', ')
+		winners,
+		losers
 	}
 }
 
