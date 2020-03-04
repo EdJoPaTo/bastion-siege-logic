@@ -63,6 +63,14 @@ export function calcSemitotalGoldIncome(buildings: Buildings): number {
 		(calcProduction(buildings.mine) * 2)
 }
 
+export function calcNeeded(cost: ConstructionResources, currentResources: ConstructionResources): ConstructionResources {
+	return {
+		gold: Math.max(0, cost.gold - currentResources.gold),
+		wood: Math.max(0, cost.wood - currentResources.wood),
+		stone: Math.max(0, cost.stone - currentResources.stone)
+	}
+}
+
 export function calcMinutesNeeded(cost: ConstructionResources, buildings: Buildings, currentResources: ConstructionResources): number {
 	const needed = {
 		gold: cost.gold - currentResources.gold,

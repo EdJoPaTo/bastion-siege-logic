@@ -1,15 +1,17 @@
-import test from 'ava'
+import test, {ExecutionContext} from 'ava'
 
 import {
 	calcGoldCapacity,
 	calcGoldIncome,
 	calcGoldIncomePerPerson,
 	calcMinutesNeededToFillStorage,
+	calcNeeded,
 	calcProduction,
 	calcProductionFood,
 	calcResourcesAfterConstruction,
 	calcSemitotalGoldIncome,
 	calcStorageCapacity,
+	ConstructionResources,
 	estimateResourcesAfter
 } from '../source/resources'
 
@@ -57,6 +59,14 @@ test('semitotal income', t => {
 	t.is(calcSemitotalGoldIncome({...buildingsOne, townhall: 35, houses: 50, sawmill: 50, mine: 50}), 6000)
 	t.is(calcSemitotalGoldIncome({...buildingsOne, townhall: 282, houses: 400, sawmill: 100, mine: 100}), 233600)
 })
+
+function calcNeededMacro(t: ExecutionContext, cost: ConstructionResources, currentResources: ConstructionResources, expected: ConstructionResources): void {
+	t.deepEqual(calcNeeded(cost, currentResources), expected)
+}
+
+test('calcNeeded total gold', calcNeededMacro, {gold: 1000, wood: 0, stone: 0}, {gold: 0, wood: 0, stone: 0}, {gold: 1000, wood: 0, stone: 0})
+test('calcNeeded partial gold', calcNeededMacro, {gold: 1000, wood: 0, stone: 0}, {gold: 800, wood: 0, stone: 0}, {gold: 200, wood: 0, stone: 0})
+test('calcNeeded more than enough gold', calcNeededMacro, {gold: 1000, wood: 0, stone: 0}, {gold: 2000, wood: 0, stone: 0}, {gold: 0, wood: 0, stone: 0})
 
 test('minutes needed to fill when full', t => {
 	const currentResources = {gold: 0, wood: 1050, stone: 1050, food: 1050}
