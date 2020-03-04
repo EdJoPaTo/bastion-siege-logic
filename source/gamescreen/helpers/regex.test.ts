@@ -35,6 +35,6 @@ test('getNumber unsuccessful', t => {
 test('getStrict undefined throws', t => {
 	t.throws(
 		() => regexHelper.getStrict('was das denn?', /was (\d+)/),
-		'not a match'
+		{message: 'not a match'}
 	)
 })

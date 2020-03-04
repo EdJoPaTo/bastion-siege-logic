@@ -103,5 +103,8 @@ test('multiple emoji variant selector 2', exampleMacro, '⚰️️[🐂]Апок
 })
 
 test('garbage throws', t => {
-	t.throws(() => parsePlayer(''), 'could not parse player')
+	t.throws(
+		() => parsePlayer(''),
+		{message: 'could not parse player'}
+	)
 })
