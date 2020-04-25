@@ -76,7 +76,7 @@ function rawContentFromRussian(content: string): Raw {
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /Битва с (?:альянсом )?([\s\S]+) окончена/)
 
-	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Победители', 'Проигравшие', 'Для')
+	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Победители', 'Проигравшие', '\nДля')
 
 	const soldiers = getSoldiers(content, {
 		normal: `(\\d+)${REGEX_ARMY} из (\\d+)${REGEX_ARMY}`,
@@ -106,7 +106,7 @@ function rawContentFromEnglish(content: string): Raw {
 
 	const {name: enemy, alliance: enemyAlliance} = regexHelper.getPlayer(content, /battle with (?:alliance )?([\s\S]+) complete/)
 
-	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Winners', 'Losers', 'For')
+	const winnersLosers = getWinnersLosersFromAllianceAttack(content, 'Winners', 'Losers', '\nFor')
 
 	const soldiers = getSoldiers(content, {
 		normal: `(\\d+)${REGEX_ARMY} of (\\d+)${REGEX_ARMY}`,
@@ -133,13 +133,13 @@ function getWinnersLosersFromAllianceAttack(content: string, winnersString: stri
 
 	const winnersStartIndex = content.indexOf(winnersString + ': ')
 	const losersStartIndex = content.indexOf(losersString + ': ')
-	const loserAbortIndex = content.includes(losersAbortString) ? content.indexOf(losersAbortString) : content.length + 1
+	const loserAbortIndex = content.includes(losersAbortString) ? content.indexOf(losersAbortString) : content.length
 
 	const winnersSubstring = content.slice(winnersStartIndex + winnersString.length + 2, losersStartIndex - 1)
 	const winners = winnersSubstring.split(', ')
 		.map(o => o.trim())
 
-	const losersSubstring = content.slice(losersStartIndex + losersString.length + 2, loserAbortIndex - 1)
+	const losersSubstring = content.slice(losersStartIndex + losersString.length + 2, loserAbortIndex)
 	const losers = losersSubstring.split(', ')
 		.map(o => o.trim())
 

@@ -357,6 +357,25 @@ Losers: A, B, C`
 		information: {battlereport: {
 			won: true,
 			attack: true,
+			enemies: ['K', 'L'],
+			enemyAlliance: '🗻 ',
+			friends: ['For Honor', 'A', 'B', 'C', 'D', 'E', 'F'],
+			me: 'A',
+			soldiersAlive: 40000,
+			soldiersTotal: 50000,
+			gold: 400000,
+			terra: 1000,
+			karma: 2
+		}},
+		text: `‼️The battle with alliance [🗻 ]RyPython complete. Congratulations, A! Your alliance won. The winners 40000⚔️ of 50000⚔️ proudly return home. Your reward is 400000💰, and 1000🗺 joined to your domain. Your karma has been modified by 2☯️.
+Winners: For Honor, A, B, C, D, E, F
+Losers: K, L
+For 9779⚔️ of 21019⚔️ not found a place in the 🛡Barracks and had to disband. They join the ranks of 👥People. The next time take care of availability for the winners.
+531⚔️ of the 9779⚔️ dismissed soldiers did not find myself dwelling places in your domain.`
+	}, {
+		information: {battlereport: {
+			won: true,
+			attack: true,
 			enemies: ['Z'],
 			friends: ['A'],
 			me: 'A',
