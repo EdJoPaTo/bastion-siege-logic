@@ -6,11 +6,11 @@ import {Mystic, isMystic} from './mystics'
 const emojiRegex = require('emoji-tree/lib/emojiRegex')
 
 export interface Player {
-	name: string;
-	mystic?: Mystic;
-	alliance?: string;
-	bonus?: string;
-	achievements?: string;
+	readonly name: string;
+	readonly mystic?: Mystic;
+	readonly alliance?: string;
+	readonly bonus?: string;
+	readonly achievements?: string;
 }
 
 const nameRegex = createNameRegex()

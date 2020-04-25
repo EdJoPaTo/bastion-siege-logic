@@ -2,26 +2,26 @@ import {Mystic} from './gamescreen/mystics'
 
 export type BattlereportResource = 'gold' | 'gems' | 'karma' | 'terra'
 
-export interface Battlereport extends BattlereportRaw {
-	time: number;
+export interface Battlereport extends Readonly<BattlereportRaw> {
+	readonly time: number;
 }
 
 export interface BattlereportRaw {
-	attack: boolean;
-	won: boolean;
-	me: string;
-	friends: string[];
-	enemies: string[];
-	enemyAlliance?: string;
-	enemyMystic?: Mystic;
+	readonly attack: boolean;
+	readonly won: boolean;
+	readonly me: string;
+	readonly friends: readonly string[];
+	readonly enemies: readonly string[];
+	readonly enemyAlliance?: string;
+	readonly enemyMystic?: Mystic;
 
-	soldiersAlive: number;
-	soldiersTotal: number;
+	readonly soldiersAlive: number;
+	readonly soldiersTotal: number;
 
-	gold: number;
-	gems?: number;
-	karma?: number;
-	terra?: number;
+	readonly gold: number;
+	readonly gems?: number;
+	readonly karma?: number;
+	readonly terra?: number;
 }
 
 export function uniqueBattlereportIdentifier(report: Battlereport): string {
@@ -32,7 +32,7 @@ export function uniqueBattlereportIdentifier(report: Battlereport): string {
 /// In lost alliance battles everyone loses a different amount
 /// With this the known values are extrapolated
 /// Assumes the reports are of the same battle
-export function sameBattleResourceAssumption(reports: Battlereport[], resource: BattlereportResource = 'gold'): number {
+export function sameBattleResourceAssumption(reports: readonly Battlereport[], resource: BattlereportResource = 'gold'): number {
 	const participants = reports[0].friends.length
 	const sum = reports
 		.map(o => o[resource] as number)

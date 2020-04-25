@@ -18,7 +18,8 @@ const availableParser: Parser[] = [
 	players
 ]
 	.map(o => Object.values(o))
-	.reduce((collector, add: Parser[]) => collector.concat(add), [])
+	// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
+	.reduce((collector, add: readonly Parser[]) => collector.concat(add), [])
 
 export function parseGamescreenContent(content: string): GamescreenContent {
 	for (const parser of availableParser) {

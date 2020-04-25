@@ -15,7 +15,7 @@ function translationMissing(t: ExecutionContext, lang: 'en' | 'ru'): void {
 test('gametexts have en', translationMissing, 'en')
 test('gametexts have ru', translationMissing, 'ru')
 
-function keysIncluded(t: ExecutionContext, keysRequired: string[]): void {
+function keysIncluded(t: ExecutionContext, keysRequired: readonly string[]): void {
 	const keys = Object.keys(GAMETEXT)
 	for (const required of keysRequired) {
 		t.true(keys.includes(required), `${required} is missing`)

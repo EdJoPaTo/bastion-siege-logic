@@ -6,64 +6,64 @@ import {Resources} from '../resources'
 import {Player} from './player'
 
 export interface AllianceBattleStart {
-	attack: boolean;
-	ally: Player;
-	enemy: Player;
+	readonly attack: boolean;
+	readonly ally: Player;
+	readonly enemy: Player;
 }
 
 export interface Attackscout {
-	player: Player;
-	terra: number;
-	karma: number;
+	readonly player: Player;
+	readonly terra: number;
+	readonly karma: number;
 }
 
 export interface BattleSolo {
-	enemy: Player;
+	readonly enemy: Player;
 }
 
 export interface BattleAlliance {
-	attack: string[];
-	defence: string[];
+	readonly attack: string[];
+	readonly defence: string[];
 }
 
 export interface CastleSiegeAllianceJoined {
-	alliance: string;
+	readonly alliance: string;
 }
 
 export interface CastleSiegeParticipant {
-	alliance: string;
-	name: string;
-	players: string[];
+	readonly alliance: string;
+	readonly name: string;
+	readonly players: string[];
 }
 
 export interface CastleSiegeEnds {
-	oldAlliance?: string;
-	newAlliance?: string;
+	readonly oldAlliance?: string;
+	readonly newAlliance?: string;
 }
 
 export interface Chat {
-	sender: string;
-	text: string;
+	readonly sender: string;
+	readonly text: string;
 }
 
 export interface DomainStats {
-	wins: number;
-	karma: number;
-	terra: number;
+	readonly wins: number;
+	readonly karma: number;
+	readonly terra: number;
 }
 
 export interface Effect {
-	emoji: string;
-	name: string;
-	timestamp?: number;
-	minutesRemaining?: number;
+	readonly emoji: string;
+	readonly name: string;
+	readonly timestamp?: number;
+	readonly minutesRemaining?: number;
 }
 
 export interface ListEntry {
-	type: string;
-	name: string;
-	value: string;
-	meta?: string;
+	readonly type: string;
+	readonly name: string;
+	readonly value: string;
+	readonly meta?: string;
 }
 
 export type GamescreenType =
@@ -89,35 +89,35 @@ export type GamescreenType =
 	'war'
 
 export interface GamescreenContent {
-	type?: GamescreenType;
+	readonly type?: GamescreenType;
 
-	allianceBattleStart?: AllianceBattleStart;
-	allianceBattleSupport?: Player;
-	allianceJoinRequest?: Player;
-	allianceLeader?: Player;
-	alreadyInFight?: Player;
-	attackIncoming?: Player;
-	attackscout?: Attackscout;
-	battle?: BattleAlliance | BattleSolo;
-	battlereport?: BattlereportRaw;
-	buildings?: Buildings;
-	castle?: Castle;
-	castleSiegeAllianceJoined?: CastleSiegeAllianceJoined;
-	castleSiegeEnds?: CastleSiegeEnds;
-	castleSiegeParticipants?: CastleSiegeParticipant[];
-	castleSiegePlayerJoined?: Player;
-	chat?: Chat;
-	conqueror?: Player;
-	domainStats?: DomainStats;
-	effects?: Effect[];
-	list?: ListEntry[];
-	notRecoveredFromFight?: Player;
-	player?: Player;
-	resources?: Resources;
-	workshop?: Workshop;
+	readonly allianceBattleStart?: AllianceBattleStart;
+	readonly allianceBattleSupport?: Player;
+	readonly allianceJoinRequest?: Player;
+	readonly allianceLeader?: Player;
+	readonly alreadyInFight?: Player;
+	readonly attackIncoming?: Player;
+	readonly attackscout?: Attackscout;
+	readonly battle?: BattleAlliance | BattleSolo;
+	readonly battlereport?: BattlereportRaw;
+	readonly buildings?: Buildings;
+	readonly castle?: Castle;
+	readonly castleSiegeAllianceJoined?: CastleSiegeAllianceJoined;
+	readonly castleSiegeEnds?: CastleSiegeEnds;
+	readonly castleSiegeParticipants?: CastleSiegeParticipant[];
+	readonly castleSiegePlayerJoined?: Player;
+	readonly chat?: Chat;
+	readonly conqueror?: Player;
+	readonly domainStats?: DomainStats;
+	readonly effects?: Effect[];
+	readonly list?: ListEntry[];
+	readonly notRecoveredFromFight?: Player;
+	readonly player?: Player;
+	readonly resources?: Resources;
+	readonly workshop?: Workshop;
 }
 
 export interface Gamescreen extends GamescreenContent {
-	timestamp: number;
-	ingameTimestamp: number;
+	readonly timestamp: number;
+	readonly ingameTimestamp: number;
 }

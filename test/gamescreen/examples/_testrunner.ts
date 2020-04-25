@@ -4,10 +4,10 @@ import {GamescreenContent} from '../../../source/gamescreen/gamescreen-type'
 import {parseGamescreenContent} from '../../../source/gamescreen/gamescreen'
 
 export interface Testexample {
-	comment?: string;
-	language: string;
-	information: GamescreenContent;
-	text: string;
+	readonly comment?: string;
+	readonly language: string;
+	readonly information: GamescreenContent;
+	readonly text: string;
 }
 
 export function testrunner(t: ExecutionContext, example: Testexample): void {

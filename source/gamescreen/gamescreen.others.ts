@@ -19,32 +19,33 @@ export function effects(content: string): GamescreenContent {
 
 	const lines = content.split('\n')
 
-	const effects: Effect[] = lines
-		.map(line => {
-			const effect: Effect = {
-				emoji: regexHelper.getStrict(line, EFFECTS_REGEX, 1),
-				name: regexHelper.getStrict(line, EFFECTS_REGEX, 2)
-			}
+	const effects = lines
+		.map((line): Effect => {
+			const emoji = regexHelper.getStrict(line, EFFECTS_REGEX, 1)
+			const name = regexHelper.getStrict(line, EFFECTS_REGEX, 2)
 
 			const minutesRemaining = regexHelper.getOptionalNumber(line, /: (\d+) [^.]+\./)
 			const timestampString = regexHelper.getOptional(line, /(\d[\d-: ]+ \+0000 UTC)/)
 
 			if (timestampString) {
-				effect.timestamp = Date.parse(timestampString) / 1000
-			} else if (minutesRemaining) {
-				effect.minutesRemaining = minutesRemaining
+				const timestamp = Date.parse(timestampString) / 1000
+				return {emoji, name, timestamp}
 			}
 
-			return effect
+			if (minutesRemaining) {
+				return {emoji, name, minutesRemaining}
+			}
+
+			return {emoji, name}
 		})
 
 	return {effects}
 }
 
 interface WarRegex {
-	name: RegExp;
-	attack: RegExp;
-	defence: RegExp;
+	readonly name: RegExp;
+	readonly attack: RegExp;
+	readonly defence: RegExp;
 }
 
 const WAR_REGEX_ENGLISH: WarRegex = {
@@ -66,18 +67,16 @@ export function war(content: string): GamescreenContent {
 		return {}
 	}
 
-	const result: GamescreenContent = {
-		type: 'war',
-		domainStats: getWarMenuDomainStats(content)
-	}
+	const type = 'war'
+	const domainStats = getWarMenuDomainStats(content)
 
 	const warRegex = isEnglish ? WAR_REGEX_ENGLISH : WAR_REGEX_RUSSIAN
 	const battle = getWarBattle(content, warRegex)
 	if (battle) {
-		result.battle = battle
+		return {type, domainStats, battle}
 	}
 
-	return result
+	return {type, domainStats}
 }
 
 function getWarMenuDomainStats(content: string): DomainStats {

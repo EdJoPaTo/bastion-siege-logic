@@ -62,13 +62,23 @@
 			"ava/no-ignored-test-files": "off",
 			"import/named": "warn",
 			"unicorn/better-regex": "warn",
-			"@typescript-eslint/prefer-readonly-parameter-types": "off",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
 				{
 					"ignoreRhs": true
 				}
 			]
-		}
+		},
+		"overrides": [
+			{
+				"files": [
+					"test/**/*",
+					"**/*.test.*"
+				],
+				"rules": {
+					"@typescript-eslint/prefer-readonly-parameter-types": "off"
+				}
+			}
+		]
 	}
 }

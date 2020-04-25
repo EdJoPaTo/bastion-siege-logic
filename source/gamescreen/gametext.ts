@@ -1,9 +1,9 @@
 interface LangEntry {
-	en: string;
-	ru: string;
+	readonly en: string;
+	readonly ru: string;
 }
 
-export const GAMETEXT: Record<string, LangEntry> = {
+export const GAMETEXT: Readonly<Record<string, LangEntry>> = {
 	townhall: {
 		en: 'Town hall',
 		ru: 'Ратуша'

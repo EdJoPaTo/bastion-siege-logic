@@ -11,14 +11,14 @@ export type BattleType = keyof BattleOdds
 export type BattleBuilding = keyof BattleBuildingOdds
 
 interface BattleOdds {
-	solo: BattleBuildingOdds;
-	alliance: BattleBuildingOdds;
+	readonly solo: BattleBuildingOdds;
+	readonly alliance: BattleBuildingOdds;
 }
 
 interface BattleBuildingOdds {
-	barracks: number;
-	trebuchet: number;
-	wall: number;
+	readonly barracks: number;
+	readonly trebuchet: number;
+	readonly wall: number;
 }
 
 export const BATTLE_ODDS: BattleOdds = {

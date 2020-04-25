@@ -1,4 +1,4 @@
-export const NOT_ALLOWED_CHARS = [
+export const NOT_ALLOWED_CHARS: readonly string[] = [
 	// https://en.wikipedia.org/wiki/Zero-width_space
 	'\u200B',
 	// https://en.wikipedia.org/wiki/Zero-width_joiner
@@ -7,13 +7,13 @@ export const NOT_ALLOWED_CHARS = [
 	'\uFE0F'
 ]
 
-export const ALTERNATIVE_SPACES = [
+export const ALTERNATIVE_SPACES: readonly string[] = [
 	'\n',
 	'\t',
 	'\v'
 ]
 
-export function inputTextCleanup(text: Readonly<string>): string {
+export function inputTextCleanup(text: string): string {
 	let output = text
 
 	for (const entry of NOT_ALLOWED_CHARS) {
@@ -23,8 +23,6 @@ export function inputTextCleanup(text: Readonly<string>): string {
 	for (const entry of ALTERNATIVE_SPACES) {
 		output = output.replace(new RegExp(entry, 'g'), ' ')
 	}
-
-	text = '42'
 
 	return output
 }

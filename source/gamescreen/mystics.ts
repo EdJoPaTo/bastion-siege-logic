@@ -3,23 +3,23 @@ import {EMOJI} from './emoji'
 import {inputTextCleanup} from './text-cleanup'
 
 export interface MysticsText {
-	dragon: string;
-	undead: string;
+	readonly dragon: string;
+	readonly undead: string;
 }
 
 export type Mystic = keyof MysticsText
 
-export const MYSTICS: Mystic[] = [
+export const MYSTICS: readonly Mystic[] = [
 	'dragon',
 	'undead'
 ]
 
-export const MYSTICS_TEXT_EN = {
+export const MYSTICS_TEXT_EN: MysticsText = {
 	dragon: EMOJI.dragon + 'Dragon',
 	undead: EMOJI.undead + 'Undead army'
 }
 
-export const MYSTICS_TEXT_RU = {
+export const MYSTICS_TEXT_RU: MysticsText = {
 	dragon: EMOJI.dragon + 'Драконом',
 	undead: `армией ${EMOJI.undead}Нежити`
 }

@@ -3,23 +3,23 @@ import {
 } from './buildings'
 
 export interface ConstructionResources {
-	gold: number;
-	wood: number;
-	stone: number;
+	readonly gold: number;
+	readonly wood: number;
+	readonly stone: number;
 }
 
 export interface Resources {
-	gold: number;
-	wood: number;
-	stone: number;
-	food: number;
+	readonly gold: number;
+	readonly wood: number;
+	readonly stone: number;
+	readonly food: number;
 }
 
 export type ConstructionResourceName = keyof ConstructionResources
 export type ResourceName = keyof Resources
 
-export const CONSTRUCTION_RESOURCES: ConstructionResourceName[] = ['gold', 'wood', 'stone']
-export const RESOURCES: ResourceName[] = ['gold', 'wood', 'stone', 'food']
+export const CONSTRUCTION_RESOURCES: readonly ConstructionResourceName[] = ['gold', 'wood', 'stone']
+export const RESOURCES: readonly ResourceName[] = ['gold', 'wood', 'stone', 'food']
 
 export function calcGoldCapacity(townhallLevel: number): number {
 	return 500000 * townhallLevel
@@ -163,7 +163,8 @@ export function estimateResourcesAfter(currentResources: Resources, buildings: B
 
 // Gold can be negative afterwards!
 export function calcResourcesAfterConstruction(before: Resources, cost: ConstructionResources): Resources {
-	const result: Resources = {gold: 0, wood: 0, stone: 0, food: before.food}
+	const result = {gold: 0, wood: 0, stone: 0, food: before.food}
+
 	for (const r of CONSTRUCTION_RESOURCES) {
 		result[r] = before[r] - cost[r]
 

@@ -7,35 +7,43 @@ import {isMystic} from './mystics'
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
 
+type Mutable<T> = {-readonly[P in keyof T]: T[P]}
+
 interface BasicRaw {
-	gold: number;
-	gems?: number;
-	terra: number;
-	karma?: number;
+	readonly gold: number;
+	readonly gems?: number;
+	readonly terra: number;
+	readonly karma?: number;
 }
 
 interface WinnersLosers {
-	winners?: string[];
-	losers?: string[];
+	readonly winners?: readonly string[];
+	readonly losers?: readonly string[];
+}
+
+interface FriendsEnemies {
+	readonly me: string;
+	readonly friends: readonly string[];
+	readonly enemies: readonly string[];
 }
 
 interface Soldiers {
-	soldiersAlive: number;
-	soldiersTotal: number;
+	readonly soldiersAlive: number;
+	readonly soldiersTotal: number;
 }
 
 interface Raw extends BasicRaw, WinnersLosers, Soldiers {
-	won: boolean;
-	me: string;
-	enemy: string;
-	enemyAlliance?: string;
+	readonly won: boolean;
+	readonly me: string;
+	readonly enemy: string;
+	readonly enemyAlliance?: string;
 }
 
 interface SoldiersRegExp {
-	normal: string;
-	noneOf: string;
-	noneOf2: string;
-	withoutLoss: string;
+	readonly normal: string;
+	readonly noneOf: string;
+	readonly noneOf2: string;
+	readonly withoutLoss: string;
 }
 
 const REGEX_ARMY = `${EMOJI.army}.?`
@@ -189,7 +197,7 @@ function getBattlereportFromRaw(raw: Raw): BattlereportRaw {
 
 	const friendsEnemies = getFriendsEnemies(raw)
 
-	const battlereport: BattlereportRaw = {
+	const battlereport: Mutable<BattlereportRaw> = {
 		attack,
 		won: raw.won,
 		...friendsEnemies,
@@ -225,12 +233,6 @@ function getBattlereportFromRaw(raw: Raw): BattlereportRaw {
 	}
 
 	return battlereport
-}
-
-interface FriendsEnemies {
-	me: string;
-	friends: string[];
-	enemies: string[];
 }
 
 function getFriendsEnemies(raw: Raw): FriendsEnemies {

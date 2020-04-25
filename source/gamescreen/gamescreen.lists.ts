@@ -70,17 +70,16 @@ function readList(content: string, regex: RegExp): ListEntry[] {
 				return undefined
 			}
 
-			const entry: ListEntry = {
-				type: match[1],
-				name: match[2].trim(),
-				value: match[3]
+			const type = match[1]
+			const name = match[2].trim()
+			const value = match[3]
+			const meta = match[4]
+
+			if (meta) {
+				return {type, name, value, meta}
 			}
 
-			if (match[4]) {
-				entry.meta = match[4]
-			}
-
-			return entry
+			return {type, name, value}
 		})
 		.filter(o => o) as ListEntry[]
 
