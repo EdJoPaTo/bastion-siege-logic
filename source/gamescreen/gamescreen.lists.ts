@@ -4,6 +4,7 @@ import {
 	ListEntry
 } from './gamescreen-type'
 
+import {RegExpLike, generateRegex} from './helpers/regex'
 import * as contentFilter from './helpers/content-filter'
 
 const LIST_SIMPLE_REGEX = /^(👑|🔅|⚜)(.+)\s+(\S+)$/
@@ -59,13 +60,13 @@ export function allianceMembers(content: string): GamescreenContent {
 	return {}
 }
 
-function readList(content: string, regex: RegExp): ListEntry[] {
+function readList(content: string, regex: RegExpLike): ListEntry[] {
 	const lines = content.split('\n')
 		.filter(o => contentFilter.startsAny(o, EMOJI.listLeader, EMOJI.listNormal, EMOJI.listYou))
 
 	const entries = lines
 		.map(o => {
-			const match = regex.exec(o)
+			const match = generateRegex(regex).exec(o)
 			if (!match) {
 				return undefined
 			}

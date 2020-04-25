@@ -43,9 +43,9 @@ export function effects(content: string): GamescreenContent {
 }
 
 interface WarRegex {
-	readonly name: RegExp;
-	readonly attack: RegExp;
-	readonly defence: RegExp;
+	readonly name: regexHelper.RegExpLike;
+	readonly attack: regexHelper.RegExpLike;
+	readonly defence: regexHelper.RegExpLike;
 }
 
 const WAR_REGEX_ENGLISH: WarRegex = {
