@@ -209,7 +209,7 @@ export function participants(content: string): GamescreenContent {
 	const alliances: CastleSiegeParticipant[] = []
 	for (const line of lines) {
 		if (line.startsWith('[')) {
-			const {alliance, name} = regexHelper.getPlayer(line, /^(\[[^\]]+\][^(]+)(?: \(\d+\))?$/)
+			const {alliance, name} = regexHelper.getPlayer(line, /^(\[[^\]]+][^(]+)(?: \(\d+\))?$/)
 			if (!alliance) {
 				throw new Error('failed to parse castle participants')
 			}

@@ -25,7 +25,7 @@ export function effects(content: string): GamescreenContent {
 			const name = regexHelper.getStrict(line, EFFECTS_REGEX, 2)
 
 			const minutesRemaining = regexHelper.getOptionalNumber(line, /: (\d+) [^.]+\./)
-			const timestampString = regexHelper.getOptional(line, /(\d[\d-: ]+ \+0000 UTC)/)
+			const timestampString = regexHelper.getOptional(line, /(\d[\d-: ]+ \+0{4} UTC)/)
 
 			if (timestampString) {
 				const timestamp = Date.parse(timestampString) / 1000

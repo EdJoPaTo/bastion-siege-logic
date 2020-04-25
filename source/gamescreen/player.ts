@@ -22,7 +22,7 @@ function createNameRegex(): RegExp {
 		// Achievements
 		/(?:{([^}]+)})?/,
 		// Alliance
-		/(?:\[([^\]]+)\])?/,
+		/(?:\[([^\]]+)])?/,
 		// Name
 		/(.+)/
 	]

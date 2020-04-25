@@ -61,7 +61,6 @@
 		"rules": {
 			"ava/no-ignored-test-files": "off",
 			"import/named": "warn",
-			"unicorn/better-regex": "warn",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
 				{
