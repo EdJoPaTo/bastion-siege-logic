@@ -17,8 +17,8 @@ test('gametexts have ru', translationMissing, 'ru')
 
 function keysIncluded(t: ExecutionContext, keysRequired: string[]): void {
 	const keys = Object.keys(GAMETEXT)
-	for (const req of keysRequired) {
-		t.true(keys.includes(req), `${req} is missing`)
+	for (const required of keysRequired) {
+		t.true(keys.includes(required), `${required} is missing`)
 	}
 }
 

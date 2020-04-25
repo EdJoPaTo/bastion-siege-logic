@@ -15,10 +15,10 @@ export interface Player {
 
 const nameRegex = createNameRegex()
 function createNameRegex(): RegExp {
-	const e: string = emojiRegex.source
+	const emojiSource: string = (emojiRegex as RegExp).source
 	const concatedNamePart = [
 		// First part (negative karma, conquerer, halloween, …)
-		`(${e}+)?`,
+		`(${emojiSource}+)?`,
 		// Achievements
 		/(?:{([^}]+)})?/,
 		// Alliance

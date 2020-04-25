@@ -59,8 +59,9 @@ test('calcRecoveryMissingPeople 5 more than houses can fit', missingPeopleMacro,
 
 test('calcRecoveryMissingPeople empty object NaN NaN NaN', t => {
 	const f: any = calcRecoveryMissingPeople
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	t.deepEqual(f({}, 666), {
-		minutesNeeded: NaN,
-		gold: NaN
+		minutesNeeded: Number.NaN,
+		gold: Number.NaN
 	})
 })

@@ -38,7 +38,7 @@
 		"del-cli": "^3.0.0",
 		"nyc": "^15.0.0",
 		"typescript": "^3.7.4",
-		"xo": "^0.27.2"
+		"xo": "^0.29.1"
 	},
 	"nyc": {
 		"extension": [
@@ -57,23 +57,17 @@
 		]
 	},
 	"xo": {
-		"extends": "xo-typescript",
 		"semicolon": false,
-		"extensions": [
-			"ts"
-		],
 		"rules": {
-			"import/named": "warn",
 			"ava/no-ignored-test-files": "off",
+			"import/named": "warn",
+			"unicorn/better-regex": "warn",
+			"@typescript-eslint/prefer-readonly-parameter-types": "off",
 			"@typescript-eslint/no-unnecessary-condition": [
 				"error",
 				{
 					"ignoreRhs": true
 				}
-			],
-			"@typescript-eslint/semi": [
-				"error",
-				"never"
 			]
 		}
 	}

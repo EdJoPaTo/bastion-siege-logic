@@ -1,5 +1,7 @@
 /* eslint @typescript-eslint/no-require-imports: "warn" */
 /* eslint @typescript-eslint/no-var-requires: "warn" */
+/* eslint @typescript-eslint/no-unsafe-return: off */
+/* eslint @typescript-eslint/no-unsafe-call: off */
 const emojiTree = require('emoji-tree')
 
 export function getUnicode(text: string): string[] {

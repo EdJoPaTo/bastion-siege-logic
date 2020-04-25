@@ -18,7 +18,7 @@ const availableParser: Parser[] = [
 	players
 ]
 	.map(o => Object.values(o))
-	.reduce((arr, add: Parser[]) => arr.concat(add), [])
+	.reduce((collector, add: Parser[]) => collector.concat(add), [])
 
 export function parseGamescreenContent(content: string): GamescreenContent {
 	for (const parser of availableParser) {

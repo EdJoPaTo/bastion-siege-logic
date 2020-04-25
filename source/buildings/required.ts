@@ -13,10 +13,12 @@ export function calcStorageLevelNeededForUpgrade(building: ConstructionName, wan
 	const maxResourceFactor = Math.max(BUILDING_COST_FACTORS[building][1], BUILDING_COST_FACTORS[building][2])
 	const resourceLimitNeeded = maxResourceFactor * wantedBuildingLevel * (wantedBuildingLevel + 1)
 
+	/* eslint-disable unicorn/prevent-abbreviations */
 	const tmp1 = Math.sqrt(2)
 	const tmp2 = Math.sqrt(resourceLimitNeeded + 5000)
 	const tmp3 = (tmp1 * tmp2) - 100
 	const tmp4 = tmp3 / 10
+	/* eslint-enable */
 	const levelRequired = Math.ceil(tmp4)
 
 	return levelRequired
@@ -26,8 +28,7 @@ export function calcTownhallLevelNeededForUpgrade(building: ConstructionName, wa
 	const goldFactor = BUILDING_COST_FACTORS[building][0]
 	const resourceLimitNeeded = goldFactor * wantedBuildingLevel * (wantedBuildingLevel + 1)
 
-	const tmp1 = resourceLimitNeeded / 500000
-	const levelRequired = Math.ceil(tmp1)
+	const levelRequired = Math.ceil(resourceLimitNeeded / 500000)
 	return levelRequired
 }
 
@@ -50,11 +51,13 @@ export function calcMaxBuildingLevelWithTownhall(building: ConstructionName, tow
 }
 
 function calcMaxBuildingLevelWithFactorAndCapacity(factor: number, capacity: number): number {
+	/* eslint-disable unicorn/prevent-abbreviations */
 	const tmp11 = factor ** 2
 	const tmp12 = -4 * factor * capacity
 	const tmp1 = Math.sqrt(tmp11 - tmp12)
 	const tmp2 = 2 * factor
 	const tmp = (tmp1 / tmp2) - 0.5
+	/* eslint-enable */
 	const result = Math.floor(tmp)
 	return result
 }
