@@ -1,4 +1,4 @@
-export const EMOJI: {[key: string]: string} = {
+export const EMOJI = {
 	gold: '💰',
 	wood: '🌲',
 	stone: '⛏',

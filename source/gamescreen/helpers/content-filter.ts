@@ -38,7 +38,7 @@ export function endsAny(content: string, first: string, second: string, ...more:
 }
 
 export function startsWithGametext(content: string, emojiSelector: string, gametextSelector: string, spaceSeperated: boolean): boolean {
-	const emoji = EMOJI[emojiSelector]
+	const emoji = (EMOJI as Record<string, string>)[emojiSelector]
 	const space = spaceSeperated ? ' ' : ''
 	const prefix = emoji + space
 	const {en, ru} = GAMETEXT[gametextSelector]

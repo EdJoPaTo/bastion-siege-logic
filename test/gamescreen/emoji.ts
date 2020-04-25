@@ -6,7 +6,7 @@ import {EMOJI} from '../../source/gamescreen/emoji'
 
 for (const key of Object.keys(EMOJI)) {
 	test(`no not allowed chars in ${key}`, t => {
-		const hasBadChar = NOT_ALLOWED_CHARS.some(o => EMOJI[key].includes(o))
+		const hasBadChar = NOT_ALLOWED_CHARS.some(o => (EMOJI as Record<string, string>)[key].includes(o))
 		t.false(hasBadChar)
 	})
 }
