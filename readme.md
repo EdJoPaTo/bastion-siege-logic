@@ -17,7 +17,3 @@ Please respect the fun of others and Dorians work creating the game.
 ## API
 
 The TypeScript types and method names should help you enough :)
-
-## License
-
-MIT © [EdJoPaTo](https://github.com/EdJoPaTo)
