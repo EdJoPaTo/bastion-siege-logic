@@ -418,6 +418,23 @@ For 9779⚔️ of 21019⚔️ not found a place in the 🛡Barracks and had to d
 Simpson complete. Congratulations, Bob! Your army won. The winners 10000⚔ of 15000⚔ proudly return home. Your reward is 4767398💰, and 3020🗺 joined to your domain. Your karma has been modified by 3☯.`
 	}, {
 		information: {battlereport: {
+			won: true,
+			attack: true,
+			enemies: ['Raymond Red'],
+			friends: ['The Doctor', 'Chewbacca', 'Master Yoda', 'Riversong', 'Leonidas', 'Kylo Ren'],
+			me: 'Riversong',
+			soldiersTotal: 80000,
+			soldiersAlive: 80000,
+			gold: 6000000,
+			terra: 80,
+			karma: 3
+		}},
+		text: `‼️The battle with {🏰⛏}Raymond Red complete. Congratulations, Riversong! Your alliance won. The winners 80000⚔ without a loss proudly return home. Your reward is 6000000💰, and 80🗺 joined to your domain. Your karma has been modified by 3☯.
+Winners: The Doctor, Chewbacca, Master Yoda, Riversong, Leonidas, Kylo Ren
+Losers: Raymond Red
+A new effect is obtained: 💀Plague.`
+	}, {
+		information: {battlereport: {
 			won: false,
 			attack: false,
 			enemies: ['d\no\nr\ni\nа\nn\ng\nr\ne\nv', 'Янукович', 'Спoнсор', 'Akabur', 'The King Lich', 'Elizаbeth Pratt'],
