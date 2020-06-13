@@ -33,12 +33,12 @@
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^0.7.0",
-		"@types/node": "^13.1.4",
+		"@types/node": "^14.0.13",
 		"ava": "^3.5.0",
 		"del-cli": "^3.0.0",
 		"nyc": "^15.0.0",
-		"typescript": "^3.7.4",
-		"xo": "^0.29.1"
+		"typescript": "^3.9.5",
+		"xo": "^0.32.0"
 	},
 	"nyc": {
 		"extension": [
@@ -60,13 +60,9 @@
 		"semicolon": false,
 		"rules": {
 			"ava/no-ignored-test-files": "off",
-			"import/named": "warn",
-			"@typescript-eslint/no-unnecessary-condition": [
-				"error",
-				{
-					"ignoreRhs": true
-				}
-			]
+			"unicorn/no-reduce": "off",
+			"@typescript-eslint/prefer-readonly-parameter-types": "error",
+			"@typescript-eslint/no-unnecessary-condition": "error"
 		},
 		"overrides": [
 			{
