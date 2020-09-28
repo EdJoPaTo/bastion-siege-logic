@@ -1,8 +1,7 @@
 import {inputTextCleanup} from './text-cleanup'
 import {Mystic, isMystic} from './mystics'
 
-/* eslint @typescript-eslint/no-require-imports: "warn" */
-/* eslint @typescript-eslint/no-var-requires: "warn" */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const emojiRegex = require('emoji-tree/lib/emojiRegex')
 
 export interface Player {

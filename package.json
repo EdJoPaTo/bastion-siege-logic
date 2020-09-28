@@ -60,7 +60,6 @@
 		"semicolon": false,
 		"rules": {
 			"ava/no-ignored-test-files": "off",
-			"unicorn/no-reduce": "off",
 			"@typescript-eslint/prefer-readonly-parameter-types": "error",
 			"@typescript-eslint/no-unnecessary-condition": "error"
 		},

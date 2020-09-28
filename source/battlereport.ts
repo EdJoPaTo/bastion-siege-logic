@@ -36,6 +36,7 @@ export function sameBattleResourceAssumption(reports: readonly Battlereport[], r
 	const participants = reports[0].friends.length
 	const sum = reports
 		.map(o => o[resource] as number)
+		// eslint-disable-next-line unicorn/no-reduce
 		.reduce((a, b) => a + b, 0)
 
 	const average = sum / reports.length

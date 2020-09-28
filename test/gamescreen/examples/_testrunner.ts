@@ -20,9 +20,8 @@ export function testrunner(t: ExecutionContext, example: Testexample): void {
 	t.deepEqual(result, example.information)
 }
 
-/* eslint unicorn/no-for-loop: off */
 export function testrunnerMany(examples: Testexample[]): void {
-	for (let i = 0; i < examples.length; i++) {
-		test(String(i), testrunner, examples[i])
+	for (const [i, example] of examples.entries()) {
+		test(String(i), testrunner, example)
 	}
 }
