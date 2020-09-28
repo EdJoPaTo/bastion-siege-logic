@@ -6,6 +6,7 @@
 	],
 	"compilerOptions": {
 		"outDir": "dist",
+		"target": "ES2019",
 		"sourceMap": true
 	}
 }

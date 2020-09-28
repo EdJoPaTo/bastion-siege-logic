@@ -9,7 +9,7 @@ import * as players from './gamescreen.players'
 
 type Parser = (content: string) => GamescreenContent
 
-const availableParser: Parser[] = [
+const availableParser: readonly Parser[] = [
 	battlereport,
 	buildings,
 	castle,
@@ -17,9 +17,7 @@ const availableParser: Parser[] = [
 	others,
 	players
 ]
-	.map(o => Object.values(o))
-	// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-	.reduce((collector, add: readonly Parser[]) => collector.concat(add), [])
+	.flatMap(o => Object.values(o) as Parser[])
 
 export function parseGamescreenContent(content: string): GamescreenContent {
 	for (const parser of availableParser) {
