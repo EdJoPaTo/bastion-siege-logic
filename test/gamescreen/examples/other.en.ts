@@ -162,6 +162,15 @@ Continues the battle with ❄️Барc`
 		text: `🏰 - Castle. The income of gold, resources and population increased on 20%.
 🛡 - Immunity from attacks. Opponents will not be able to find you in the search. Will continue: 28 min.`
 	}, {
+		information: {effects: [
+			{
+				emoji: '⚡️',
+				name: 'Strengthening the beginner',
+				timestamp: 1602891361
+			}
+		]},
+		text: '⚡️ - Strengthening the beginner. The income of gold, resources and population growth is doubled. Will last until: 2020-10-16 23:36:01 +0000 UTC'
+	}, {
 		information: {},
 		text: 'Your ⚔️Ballista will receive +100 to accuracy in the battle with the 🐲️Dragon until 2018-12-21 04:30:39 +0000 UTC.'
 	}, {
