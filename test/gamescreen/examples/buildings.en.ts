@@ -17,7 +17,8 @@ const examples = [
 				wood: 8065450,
 				stone: 11765450,
 				food: 11434985
-			}
+			},
+			weather: 'storm'
 		},
 		text: `[🐱]not used name
 Stalker

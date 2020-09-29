@@ -10,7 +10,8 @@ const examples = [
 				wins: 4817,
 				karma: 5059,
 				terra: 23579
-			}
+			},
+			weather: 'snowstorm'
 		},
 		text: `Победы         4817🎖
 Кристаллы       112💎
@@ -34,6 +35,7 @@ const examples = [
 				karma: 1500,
 				terra: 12000
 			},
+			weather: 'snow',
 			battle: {
 				attack: ['Devana', 'not used name'],
 				defence: ['Amaterasu', 'Izyde']
@@ -66,6 +68,7 @@ const examples = [
 				karma: -6,
 				terra: 45958
 			},
+			weather: 'sunny',
 			battle: {
 				enemy: {
 					alliance: undefined,

@@ -6,6 +6,7 @@ import {GamescreenContent} from './gamescreen-type'
 import {GAMETEXT} from './gametext'
 import {inputTextCleanup} from './text-cleanup'
 import {parsePlayer} from './player'
+import {parseWeatherFromContent} from './weather'
 
 import * as contentFilter from './helpers/content-filter'
 import * as regexHelper from './helpers/regex'
@@ -32,7 +33,8 @@ export function main(content: string): GamescreenContent {
 	return {
 		type: 'main',
 		player: parsePlayer(firstLine),
-		resources: parseResources(content)
+		resources: parseResources(content),
+		weather: parseWeatherFromContent(content)
 	}
 }
 

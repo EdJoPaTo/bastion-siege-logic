@@ -4,6 +4,7 @@ import {Castle} from '../castle'
 import {Resources} from '../resources'
 
 import {Player} from './player'
+import {Weather} from './weather'
 
 export interface AllianceBattleStart {
 	readonly attack: boolean;
@@ -114,6 +115,7 @@ export interface GamescreenContent {
 	readonly notRecoveredFromFight?: Player;
 	readonly player?: Player;
 	readonly resources?: Resources;
+	readonly weather?: Weather;
 	readonly workshop?: Workshop;
 }
 

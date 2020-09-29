@@ -1,5 +1,6 @@
 import {EMOJI} from './emoji'
 import {parsePlayer} from './player'
+import {parseWeatherFromContent} from './weather'
 import {
 	BattleAlliance,
 	BattleSolo,
@@ -69,14 +70,15 @@ export function war(content: string): GamescreenContent {
 
 	const type = 'war'
 	const domainStats = getWarMenuDomainStats(content)
+	const weather = parseWeatherFromContent(content)
 
 	const warRegex = isEnglish ? WAR_REGEX_ENGLISH : WAR_REGEX_RUSSIAN
 	const battle = getWarBattle(content, warRegex)
 	if (battle) {
-		return {type, domainStats, battle}
+		return {type, domainStats, weather, battle}
 	}
 
-	return {type, domainStats}
+	return {type, domainStats, weather}
 }
 
 function getWarMenuDomainStats(content: string): DomainStats {

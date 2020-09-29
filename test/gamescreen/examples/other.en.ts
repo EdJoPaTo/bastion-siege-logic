@@ -35,7 +35,8 @@ For 1166⚔ of 1166⚔ not found a place in the 🛡Barracks and had to disband.
 				wins: 4817,
 				karma: 5059,
 				terra: 23579
-			}
+			},
+			weather: 'snowstorm'
 		},
 		text: `Wins           4817🎖
 Gems            112💎
@@ -59,6 +60,7 @@ Weather   Snowstorm🌪
 				karma: 4387,
 				terra: 31231
 			},
+			weather: 'sunny',
 			battle: {
 				attack: ['Bob', 'not used name'],
 				defence: ['Peter-s']
@@ -90,6 +92,7 @@ Defence: Peter-s`
 				karma: -6,
 				terra: 45958
 			},
+			weather: 'sunny',
 			battle: {
 				enemy: {
 					bonus: '❄',
